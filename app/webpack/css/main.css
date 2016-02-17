@@ -1,6 +1,6 @@
 
 .input-text {
-  width: 300px;
+  width: 300px !important;
   max-width: 100%;
 }
 .player-label {

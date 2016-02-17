@@ -74,15 +74,19 @@
 
 	var _register2 = _interopRequireDefault(_register);
 
-	var _angular = __webpack_require__(24);
+	var _index = __webpack_require__(24);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _angular = __webpack_require__(25);
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _angularRoute = __webpack_require__(26);
+	var _angularRoute = __webpack_require__(27);
 
 	var _angularRoute2 = _interopRequireDefault(_angularRoute);
 
-	var _controllers = __webpack_require__(28);
+	var _controllers = __webpack_require__(29);
 
 	var _controllers2 = _interopRequireDefault(_controllers);
 
@@ -91,12 +95,12 @@
 	/* JS Vendors */
 
 
+	/* HTML Templates */
+
+
 	var app = _angular2.default.module('myApp', [_angularRoute2.default]);
 
 	/* Controllers */
-
-
-	/* HTML Templates */
 	// finds index.js
 	(0, _controllers2.default)(app);
 
@@ -141,6 +145,9 @@
 	    }
 	  });
 	}]);
+
+	document.head.innerHTML += '<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">';
+	document.body.innerHTML = _index2.default;
 
 	_angular2.default.element(document).ready(function () {
 	  _angular2.default.bootstrap(document, ['myApp']);
@@ -12454,7 +12461,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.input-text {\n  width: 300px;\n  max-width: 100%;\n}\n.player-label {\n  margin-bottom: 5px;\n}\n\n.result {\n  width: 200px;\n  max-width: 100%;\n  margin-bottom: 20px;\n}\n\n#userName {\n  font-weight: bolder;\n  color: red;\n}\n\n.navInline {\n  margin-bottom: 5px;\n}\n.searchOnePlayer {\n  margin-top: 50px;\n}\n\n\nfooter {\n  position: fixed;\n  bottom: 0px;\n  margin-top: 20px;\n  clear: both;\n  width: 100%;\n}\n", ""]);
+	exports.push([module.id, "\n.input-text {\n  width: 300px !important;\n  max-width: 100%;\n}\n.player-label {\n  margin-bottom: 5px;\n}\n\n.result {\n  width: 200px;\n  max-width: 100%;\n  margin-bottom: 20px;\n}\n\n#userName {\n  font-weight: bolder;\n  color: red;\n}\n\n.navInline {\n  margin-bottom: 5px;\n}\n.searchOnePlayer {\n  margin-top: 50px;\n}\n\n\nfooter {\n  position: fixed;\n  bottom: 0px;\n  margin-top: 20px;\n  clear: both;\n  width: 100%;\n}\n", ""]);
 
 	// exports
 
@@ -12801,14 +12808,20 @@
 
 /***/ },
 /* 24 */
+/***/ function(module, exports) {
+
+	module.exports = "<div ng-controller='mainCtrl'>\n  <nav class='navbar navbar-inverse'>\n    <div class=\"container-fluid\">\n      <div class='navbar-header navbar-brand'> Player Info App </div>\n      <ul class='nav navbar-nav'>\n        <li><a href=\"#/\">Home</a></li>\n        <li><a href=\"#/searchPlayer\">Search For Player</a></li>\n        <li><a href=\"#/login\">Login</a></li>\n        <li><a href=\"#/register\">Register</a></li>\n        <li ><a href='#/admin' ng-show='root.admin'>Admin</a></li>\n        <li ><a href='#/'ng-click=logout() ng-show='root.userLoggedIn'>Logout</a></li>\n      </ul>\n    </div>\n  </nav>\n  <div class='pushfooter'>\n  <div class='container'>\n    <div class='text-right' ng-show='root.userLoggedIn'> You are currently signed in as <span id='userName'>{{root.user}} </span> </div>\n    <main ng-view> </main>\n  </div>\n  </div>\n  <footer class='panel-footer footer'>\n  <p class='text-center'> @MaxJacobsen </p>\n  </footer>\n</div>\n";
+
+/***/ },
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(25);
+	__webpack_require__(26);
 	module.exports = angular;
 
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports) {
 
 	/**
@@ -43241,15 +43254,15 @@
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(27);
+	__webpack_require__(28);
 	module.exports = 'ngRoute';
 
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports) {
 
 	/**
@@ -44271,7 +44284,7 @@
 
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -44288,30 +44301,30 @@
 	  (0, _registerController2.default)(ngModule);
 	};
 
-	var _mainController = __webpack_require__(29);
+	var _mainController = __webpack_require__(30);
 
 	var _mainController2 = _interopRequireDefault(_mainController);
 
-	var _adminController = __webpack_require__(30);
+	var _adminController = __webpack_require__(31);
 
 	var _adminController2 = _interopRequireDefault(_adminController);
 
-	var _loginController = __webpack_require__(31);
+	var _loginController = __webpack_require__(32);
 
 	var _loginController2 = _interopRequireDefault(_loginController);
 
-	var _playerController = __webpack_require__(32);
+	var _playerController = __webpack_require__(33);
 
 	var _playerController2 = _interopRequireDefault(_playerController);
 
-	var _registerController = __webpack_require__(33);
+	var _registerController = __webpack_require__(34);
 
 	var _registerController2 = _interopRequireDefault(_registerController);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44330,7 +44343,7 @@
 	};
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44419,7 +44432,7 @@
 	};
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44457,7 +44470,7 @@
 	};
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44507,7 +44520,7 @@
 	};
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports) {
 
 	'use strict';
