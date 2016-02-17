@@ -11,8 +11,6 @@ import homeTemplate from './views/home.html';
 import loginTemplate from './views/login.html';
 import playerSearchTemplate from './views/playerSearch.html';
 import registerTemplate from './views/register.html';
-import indexTemplate from './views/index.html';
-
 
 /* JS Vendors */
 import angular from 'angular' ;
@@ -72,9 +70,6 @@ app.config(['$routeProvider', '$httpProvider', function($routeProvider) {
     }
   });
 }]);
-
-document.head.innerHTML += '<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">';
-document.body.innerHTML = indexTemplate;
 
 angular.element(document).ready(function() {
   angular.bootstrap(document, ['myApp']);

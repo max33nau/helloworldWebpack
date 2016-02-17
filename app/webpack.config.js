@@ -10,7 +10,9 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+          template: './webpack/views/index.html'
+        }),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: 'jquery'
