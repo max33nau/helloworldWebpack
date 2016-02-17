@@ -8,6 +8,12 @@ module.exports = {
     path: buildPublic,
     filename: 'bundle.js'
   },
+  plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: 'jquery'
+        }),
+  ],
   module: {
     preLoaders: [
       {

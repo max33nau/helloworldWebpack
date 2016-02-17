@@ -1,6 +1,7 @@
 'use strict';
 
 /* CSS Styling */
+import 'jquery';
 import 'bootstrap';
 import './css/main.css';
 
@@ -14,6 +15,7 @@ import registerTemplate from './views/register.html';
 /* JS Vendors */
 import angular from 'angular' ;
 import angularRoute from 'angular-route';
+
 
 const app = angular.module('myApp', [angularRoute]);
 
