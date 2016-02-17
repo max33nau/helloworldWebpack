@@ -1,0 +1,25 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Max Jacobsen",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "authenticat": "^1.0.2",
+    "body-parser": "^1.15.0",
+    "bootstrap": "^3.3.6",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "mongoose": "^4.4.3"
+  },
+  "devDependencies": {
+    "jquery": "^2.2.0"
+  }
+}
