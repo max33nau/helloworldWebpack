@@ -79,7 +79,8 @@
       <label ng-hide='editing'> {{player.yearsInTheLeauge}} </label>
       <input ng-blur="editing = false;" ng-show='editing' type="text" ng-model='updatePlayer.yearsInTheLeauge' placeholder='{{player.yearsInTheLeauge}}'class="input-text" />
     </div>
-    <button class="btn btn-primary" ng-click='editing = !editing'> Edit </button>
+    <button class="btn btn-primary" ng-click='editing = true'> Edit </button>
+    <button class="btn btn-default" ng-click='editing = false'> Cancel </button>
     <button class="btn btn-success" ng-click='admin.updatePlayer(player,updatePlayer)'> Save </button>
     <button class="btn btn-danger" ng-click='admin.deletePlayer(player)'=> Delete </button>
     <p>{{admin.error}} </p>
