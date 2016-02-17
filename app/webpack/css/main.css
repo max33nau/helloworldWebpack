@@ -10,6 +10,7 @@
 .result {
   width: 200px;
   max-width: 100%;
+  margin-bottom: 20px;
 }
 
 #userName {

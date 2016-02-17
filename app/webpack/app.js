@@ -12,6 +12,7 @@ import loginTemplate from './views/login.html';
 import playerSearchTemplate from './views/playerSearch.html';
 import registerTemplate from './views/register.html';
 
+
 /* JS Vendors */
 import angular from 'angular' ;
 import angularRoute from 'angular-route';
@@ -70,6 +71,7 @@ app.config(['$routeProvider', '$httpProvider', function($routeProvider) {
     }
   });
 }]);
+
 
 angular.element(document).ready(function() {
   angular.bootstrap(document, ['myApp']);
