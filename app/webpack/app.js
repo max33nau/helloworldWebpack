@@ -26,22 +26,22 @@ controller(app);
 app.config(['$routeProvider', '$httpProvider', function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: homeTemplate,
+      template: homeTemplate,
     })
     .when('/searchPlayer', {
-      templateUrl: playerSearchTemplate,
+      template: playerSearchTemplate,
       controller: 'playerCtrl'
     })
     .when('/login', {
-      templateUrl: loginTemplate,
+      template: loginTemplate,
       controller: 'loginCtrl'
     })
     .when('/register', {
-      templateUrl: registerTemplate,
+      template: registerTemplate,
       controller: 'registerCtrl'
     })
     .when('/admin', {
-      templateUrl: adminTemplate,
+      template: adminTemplate,
       controller: 'adminCtrl'
     })
     .otherwise({

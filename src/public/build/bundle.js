@@ -102,18 +102,18 @@
 
 	app.config(['$routeProvider', '$httpProvider', function ($routeProvider) {
 	  $routeProvider.when('/', {
-	    templateUrl: _home2.default
+	    template: _home2.default
 	  }).when('/searchPlayer', {
-	    templateUrl: _playerSearch2.default,
+	    template: _playerSearch2.default,
 	    controller: 'playerCtrl'
 	  }).when('/login', {
-	    templateUrl: _login2.default,
+	    template: _login2.default,
 	    controller: 'loginCtrl'
 	  }).when('/register', {
-	    templateUrl: _register2.default,
+	    template: _register2.default,
 	    controller: 'registerCtrl'
 	  }).when('/admin', {
-	    templateUrl: _admin2.default,
+	    template: _admin2.default,
 	    controller: 'adminCtrl'
 	  }).otherwise({
 	    redirectTo: '/'
