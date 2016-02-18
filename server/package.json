@@ -4,7 +4,8 @@
   "description": "",
   "main": "bundle.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node ./src/index.js",
+    "test": "gulp test"
   },
   "author": "Max Jacobsen",
   "license": "ISC",
@@ -20,6 +21,14 @@
     "mongoose": "^4.4.3"
   },
   "devDependencies": {
-    "jquery": "^2.2.0"
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "jquery": "^2.2.0",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0",
+    "mocha": "^2.4.5"
   }
 }

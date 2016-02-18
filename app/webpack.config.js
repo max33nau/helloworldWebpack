@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const path = require('path');
-const buildPublic = path.resolve(__dirname,'../server/public');
+const buildPublic = path.resolve(__dirname,'../server/src/public');
 
 module.exports = {
   entry: './webpack/app.js',
