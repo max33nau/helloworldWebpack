@@ -6,7 +6,10 @@
   "scripts": {
     "start": "webpack-dev-server --inline --hot",
     "build": "webpack",
-    "test": "karma start"
+    "test": "karma start",
+    "webdriver-update": "webdriver-manager update",
+    "webdriver": "webdriver-manager start",
+    "protractor": "protractor"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,7 @@
     "css-loader": "^0.23.1",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.8.2",
+    "jasmine": "^2.4.1",
     "jshint": "^2.9.1",
     "jshint-loader": "^0.8.3",
     "karma": "^0.13.21",
@@ -39,7 +43,9 @@
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
     "path": "^0.12.7",
+    "protractor": "^3.1.1",
     "style-loader": "^0.13.0",
+    "webdriver-manager": "^8.0.0",
     "webpack": "^1.12.13",
     "webpack-dev-server": "^1.14.1"
   },

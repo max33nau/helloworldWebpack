@@ -9,12 +9,12 @@ module.exports = function(config) {
     port: 9876,
     preprocessors: {
       './webpack/app.js' : ['webpack'], // specifies the entry point in karma
-      './webpack/tests/*.js': ['babel']
+      './webpack/tests/unit/*.js': ['babel']
     },
     files: [
       './webpack/app.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      './webpack/tests/*.js'
+      './webpack/tests/unit/*.js'
     ],
     exclude: [],
     reporters: ['progress'],
