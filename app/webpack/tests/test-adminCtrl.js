@@ -5,8 +5,6 @@ describe('Angular testing for adminCtrl', function(){
   var $scope;
   var $http;
   var $httpBackend;
-  var _id;
-
 
   beforeEach(angular.mock.inject(function(_$rootScope_,_$controller_, _$httpBackend_, _$http_) {
     $controller = _$controller_;
