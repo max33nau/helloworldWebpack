@@ -4,7 +4,6 @@ var chance = new Chance(); // random names for database;
 
 describe('Home page end 2 end testing', function(){
 
-
   it('should have a title of Webpack on the home page', function() {
     browser.get('/');
     expect(browser.getTitle()).toEqual('Webpack');
@@ -26,8 +25,6 @@ describe('Home page end 2 end testing', function(){
     expect(element(by.id('userName')).getText()).toEqual(userName);
     element(by.id('logoutNav')).click();
     expect(element(by.id('userName')).getText()).toBeFalsy();
-
   });
-
 
 })
