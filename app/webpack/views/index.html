@@ -10,12 +10,12 @@
       <div class="container-fluid">
         <div class='navbar-header navbar-brand'> Player Info App </div>
         <ul class='nav navbar-nav'>
-          <li><a href="#/">Home</a></li>
-          <li><a href="#/searchPlayer">Search For Player</a></li>
-          <li><a href="#/login">Login</a></li>
-          <li><a href="#/register">Register</a></li>
-          <li ><a href='#/admin' ng-show='root.admin'>Admin</a></li>
-          <li ><a href='#/'ng-click=logout() ng-show='root.userLoggedIn'>Logout</a></li>
+          <li><a id='homeNav' href="#/">Home</a></li>
+          <li><a id='searchPlayerNav' href="#/searchPlayer">Search For Player</a></li>
+          <li><a id='loginNav' href="#/login">Login</a></li>
+          <li><a id='registerNav' href="#/register">Register</a></li>
+          <li ><a id='adminNav' href='#/admin' ng-show='root.admin'>Admin</a></li>
+          <li ><a id='logoutNav' href='#/'ng-click=logout() ng-show='root.userLoggedIn'>Logout</a></li>
         </ul>
       </div>
     </nav>

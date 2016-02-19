@@ -12779,7 +12779,7 @@
 /* 20 */
 /***/ function(module, exports) {
 
-	module.exports = "<h3 class='text-center'> Welcome! </h3>\n<p> This app is designed to give you access to searching certain NBA players and get\n  there current status of team, age, years played in the league, and eventually will have\n  constant new news about the player you are searching for. </p>\n<p> In order to search for players you must be a register user. Please click on the register tab \n  to register or if you are a existing user that isn't currently logged in please click on the log in page. </p>\n";
+	module.exports = "<h3 class='text-center' id='homePageHeader'> Welcome! </h3>\n<p> This app is designed to give you access to searching certain NBA players and get\n  there current status of team, age, years played in the league, and eventually will have\n  constant new news about the player you are searching for. </p>\n<p> In order to search for players you must be a register user. Please click on the register tab\n  to register or if you are a existing user that isn't currently logged in please click on the log in page. </p>\n";
 
 /***/ },
 /* 21 */
