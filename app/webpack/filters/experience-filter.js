@@ -7,9 +7,9 @@ export default function( ngModule ) {
       } else if( yearsInTheLeauge < 5) {
         return 'Not his first rodeo but still has a lot to learn';
       } else if( yearsInTheLeauge < 10) {
-        return 'This guy is in his prime and has been doing this a while.';
+        return 'This guy is in his prime and has been doing this a while';
       } else if ( yearsInTheLeauge >= 10) {
-        return 'Learn from this guy, he is a full out veteran and knows how to be successful.';
+        return 'Learn from this guy, he is a full out veteran and knows how to be successful';
       } else {
         return 'Not Provided';
       }
