@@ -82,21 +82,28 @@
 
 	var _angularRoute2 = _interopRequireDefault(_angularRoute);
 
-	var _controllers = __webpack_require__(28);
+	var _filters = __webpack_require__(28);
+
+	var _filters2 = _interopRequireDefault(_filters);
+
+	var _controllers = __webpack_require__(30);
 
 	var _controllers2 = _interopRequireDefault(_controllers);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/* JS Vendors */
+	/* HTML Templates */
 
 
-	var app = _angular2.default.module('myApp', [_angularRoute2.default]);
+	var app = _angular2.default.module('myApp', [_angularRoute2.default, _filters2.default]);
 
 	/* Controllers */
 
 
-	/* HTML Templates */
+	/* Custom Filters */
+
+
+	/* JS Vendors */
 	// finds index.js
 	(0, _controllers2.default)(app);
 
@@ -12454,7 +12461,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.input-text {\n  width: 300px !important;\n  max-width: 100%;\n}\n.player-label {\n  margin-bottom: 5px;\n}\n\n.result {\n  width: 200px;\n  max-width: 100%;\n  margin-bottom: 20px;\n}\n\n#userName {\n  font-weight: bolder;\n  color: red;\n}\n\n.navInline {\n  margin-bottom: 5px;\n}\n.searchOnePlayer {\n  margin-top: 50px;\n}\n\n\nfooter {\n  position: fixed;\n  bottom: 0px;\n  margin-top: 20px;\n  clear: both;\n  width: 100%;\n}\n", ""]);
+	exports.push([module.id, "\n.input-text {\n  width: 300px !important;\n  max-width: 100%;\n}\n.player-label {\n  margin-bottom: 5px;\n}\n\n.result {\n  width: 200px;\n  max-width: 100%;\n  margin-bottom: 20px;\n}\n\n#userName {\n  font-weight: bolder;\n  color: red;\n}\n\n.navInline {\n  margin-bottom: 5px;\n}\n.searchOnePlayer {\n  margin-top: 50px;\n}\n.showAll-button {\n  margin-bottom: 20px;\n}\n\n.filter-categories {\n  padding: 0 5px;\n  border-right: 2px solid black;\n  font-weight: bold;\n}\n\n.filter-categories:hover {\n  color: blue;\n  cursor: pointer;\n}\n\n\nfooter {\n  position: fixed;\n  bottom: 0px;\n  margin-top: 20px;\n  clear: both;\n  width: 100%;\n}\n", ""]);
 
 	// exports
 
@@ -12791,7 +12798,7 @@
 /* 22 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div ng-show='root.notAuthorized'> You must be logged in to see this content </div>\n\n<div ng-hide ='root.notAuthorized'>\n  <h3 class='text-center'> NBA Player Search </h3>\n  <div class='text-center'>\n    <input type='text' ng-model='nameOfPlayer' name='name'> </input>\n    <button class='btn-primary' ng-click=player.search(nameOfPlayer)  value='Search'>Search For Player</button>\n    <br>\n    <br>\n    <br>\n    <button class='btn-success' ng-click='showAll = true; showOne = false'  value='Search'>Show All Player Names</button>\n  </div>\n\n  <div ng-show='showAll'>\n    <h5> List of player names to search for: </h5>\n    <ul ng-repeat='playerInfo in players'>\n      <li class=list> {{playerInfo.name}} </li>\n    </ul>\n  </div>\n\n  <div ng-show='showOne' class='searchOnePlayer'>\n    <div ng-show='searchedPlayer.notFound'>\n      {{searchedPlayer.error}}\n    </div>\n    <div ng-hide='searchedPlayer.notFound'>\n      <h5 id='playerName'> {{searchedPlayer.name}} </h5>\n      <ul 'playerList'>\n        <li class='player-list-info'> Age: {{searchedPlayer.age}} </li>\n        <li class='player-list-info'> Team: {{searchedPlayer.team}} </li>\n        <li class='player-list-info'> Position: {{searchedPlayer.team}} </li>\n        <li class='player-list-info'> Years In the League: {{searchedPlayer.yearsInTheLeauge}} </li>\n      </ul>\n    </div>\n  </div>\n</div>\n";
+	module.exports = "\n<!-- <div ng-show='root.notAuthorized'> You must be logged in to see this content </div> -->\n\n<!-- <div ng-hide ='root.notAuthorized'> -->\n<div>\n  <h3 class='text-center'> NBA Player Search </h3>\n  <div class='text-center'>\n    <input type='text' ng-model='nameOfPlayer' name='name'> </input>\n    <button class='btn-primary' ng-click=player.search(nameOfPlayer)  value='Search'>Search For Player</button>\n    <br>\n    <br>\n    <br>\n    <button class='btn-success showAll-button' ng-click='showAll = true; showOne = false'  value='Search'>Show All Players</button>\n  </div>\n\n  <div ng-show='showAll'>\n    <div class='text-center'>\n      <p> Filter By:\n        <span class='filter-categories' ng-click='selectedFilter.name = true'> Name </span>\n        <span class='filter-categories' ng-click='selectedFilter.team = true'> Team </span>\n        <span class='filter-categories' ng-click='selectedFilter.position = true'> Position </span>\n        <span class='filter-categories' ng-click='selectedFilter.rookie = true'> Rookie </span>\n        <span class='filter-categories' ng-click='player.removeFilter()'> Remove Filter </span>\n      </p>\n      <div ng-show='selectedFilter.name'>\n        Name:\n        <input type='text' ng-model='filterByName.name'/>\n      </div>\n\n      <div ng-show='selectedFilter.team'>\n        Team:\n        <input type='text' ng-model='filterByTeam.team'/>\n      </div>\n\n      <div ng-show='selectedFilter.position'>\n        Position:\n        <input type='text' ng-model='filterByPosition.position'/>\n      </div>\n\n      <div ng-show='selectedFilter.rookie'>\n        Rookie:\n        <label class=\"radio-inline\"><input type=\"radio\" ng-model='filterByRookie.rookie' value=\"true\"></input> True </label>\n        <label class=\"radio-inline\"><input type=\"radio\" ng-model='filterByRookie.rookie' value=\"false\"></input> False </label>\n      </div>\n    </div>\n\n    <table class=\"table\">\n       <thead>\n         <tr>\n           <th>Name</th>\n           <th>Team</th>\n           <th>Position</th>\n           <th>Age</th>\n           <th>Rookie</th>\n           <th>Years in the League</th>\n         </tr>\n       </thead>\n       <tbody>\n         <tr ng-repeat='playerInfo in players | filter: defaultFilter | filter : filterByName | filter: filterByTeam | filter: filterByPosition | filter: filterByRookie | orderBy: \"name\"'>\n           <td>{{playerInfo.name}}</td>\n           <td>{{playerInfo.team}}</td>\n           <td>{{playerInfo.position}}</td>\n           <td>{{playerInfo.age}}</td>\n           <td>{{playerInfo.rookie}}</td>\n           <td>{{playerInfo.yearsInTheLeauge}}</td>\n         </tr>\n       </tbody>\n     </table>\n  </div>\n\n  <div ng-show='showOne' class='searchOnePlayer'>\n    <div ng-show='searchedPlayer.notFound'>\n      {{searchedPlayer.error}}\n    </div>\n    <div ng-hide='searchedPlayer.notFound'>\n      <h5 id='playerName'> {{searchedPlayer.name}} </h5>\n      <ul 'playerList'>\n        <li class='player-list-info'> Age: {{searchedPlayer.age}} </li>\n        <li class='player-list-info'> Team: {{searchedPlayer.team}} </li>\n        <li class='player-list-info'> Position: {{searchedPlayer.position}} </li>\n        <li class='player-list-info'> Experience: {{searchedPlayer.yearsInTheLeauge | experience }} </li>\n      </ul>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 23 */
@@ -44280,6 +44287,60 @@
 	  value: true
 	});
 
+	var _angular = __webpack_require__(24);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _experienceFilter = __webpack_require__(29);
+
+	var _experienceFilter2 = _interopRequireDefault(_experienceFilter);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var filters = _angular2.default.module('filters', []);
+
+	(0, _experienceFilter2.default)(filters);
+
+	exports.default = filters.name;
+
+/***/ },
+/* 29 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	exports.default = function (ngModule) {
+	  ngModule.filter('experience', function () {
+	    return function filter(yearsInTheLeauge) {
+	      if (yearsInTheLeauge === 0) {
+	        return 'Just starting off but looking for big things';
+	      } else if (yearsInTheLeauge < 5) {
+	        return 'Not his first rodeo but still has a lot to learn';
+	      } else if (yearsInTheLeauge < 10) {
+	        return 'This guy is in his prime and has been doing this a while.';
+	      } else if (yearsInTheLeauge >= 10) {
+	        return 'Learn from this guy, he is a full out veteran and knows how to be successful.';
+	      } else {
+	        return 'Not Provided';
+	      }
+	    };
+	  });
+	};
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	exports.default = function (ngModule) {
 	  (0, _mainController2.default)(ngModule);
 	  (0, _adminController2.default)(ngModule);
@@ -44288,30 +44349,30 @@
 	  (0, _registerController2.default)(ngModule);
 	};
 
-	var _mainController = __webpack_require__(29);
+	var _mainController = __webpack_require__(31);
 
 	var _mainController2 = _interopRequireDefault(_mainController);
 
-	var _adminController = __webpack_require__(30);
+	var _adminController = __webpack_require__(32);
 
 	var _adminController2 = _interopRequireDefault(_adminController);
 
-	var _loginController = __webpack_require__(31);
+	var _loginController = __webpack_require__(33);
 
 	var _loginController2 = _interopRequireDefault(_loginController);
 
-	var _playerController = __webpack_require__(32);
+	var _playerController = __webpack_require__(34);
 
 	var _playerController2 = _interopRequireDefault(_playerController);
 
-	var _registerController = __webpack_require__(33);
+	var _registerController = __webpack_require__(35);
 
 	var _registerController2 = _interopRequireDefault(_registerController);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44330,7 +44391,7 @@
 	};
 
 /***/ },
-/* 30 */
+/* 32 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44419,7 +44480,7 @@
 	};
 
 /***/ },
-/* 31 */
+/* 33 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44457,7 +44518,7 @@
 	};
 
 /***/ },
-/* 32 */
+/* 34 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44470,6 +44531,7 @@
 	  ngModule.controller('playerCtrl', ['$scope', '$http', function ($scope, $http) {
 	    var token = localStorage.getItem('token');
 	    $scope.player = {};
+	    $scope.defaultFilter = {};
 	    $scope.players = [];
 	    $scope.searchedPlayer = {};
 	    $scope.showAll = false;
@@ -44503,11 +44565,19 @@
 	        $scope.error = 'Something went wrong getting players from the database';
 	      });
 	    };
+
+	    $scope.player.removeFilter = function () {
+	      $scope.selectedFilter = null;
+	      $scope.filterByName = {};
+	      $scope.filterByTeam = {};
+	      $scope.filterByRookie = {};
+	      $scope.filterByPosition = {};
+	    };
 	  }]);
 	};
 
 /***/ },
-/* 33 */
+/* 35 */
 /***/ function(module, exports) {
 
 	'use strict';

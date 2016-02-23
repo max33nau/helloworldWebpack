@@ -77,8 +77,8 @@
       <ul 'playerList'>
         <li class='player-list-info'> Age: {{searchedPlayer.age}} </li>
         <li class='player-list-info'> Team: {{searchedPlayer.team}} </li>
-        <li class='player-list-info'> Position: {{searchedPlayer.team}} </li>
-        <li class='player-list-info'> Years In the League: {{searchedPlayer.yearsInTheLeauge}} </li>
+        <li class='player-list-info'> Position: {{searchedPlayer.position}} </li>
+        <li class='player-list-info'> Experience: {{searchedPlayer.yearsInTheLeauge | experience }} </li>
       </ul>
     </div>
   </div>

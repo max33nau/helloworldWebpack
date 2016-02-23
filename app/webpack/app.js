@@ -16,9 +16,13 @@ import registerTemplate from './views/register.html';
 import angular from 'angular' ;
 import angularRoute from 'angular-route';
 
+/* Custom Filters */
+import filters from './filters';
+
 
 const app = angular.module('myApp', [
-  angularRoute
+  angularRoute,
+  filters
 ]);
 
 /* Controllers */

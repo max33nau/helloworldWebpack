@@ -1,6 +1,5 @@
 'use strict';
 
-import dummyData from '../test-data/dummyDataPlayers';
 
 export default function(ngModule) {
   ngModule.controller('playerCtrl',['$scope', '$http', function($scope,$http) {
@@ -10,19 +9,17 @@ export default function(ngModule) {
     $scope.players = [];
     $scope.searchedPlayer = {};
     $scope.showAll = false;
-    var x = dummyData();
-    $scope.players = x;
-    // $http({
-    //   url: '/players',
-    //   method: 'GET',
-    //   headers: { 'token': token}
-    // })
-    // .then(function(response){
-    //   $scope.players = response.data;
-    // })
-    // .catch(function(error){
-    //   $scope.error = 'Something went wrong getting players from the database';
-    // });
+    $http({
+      url: '/players',
+      method: 'GET',
+      headers: { 'token': token}
+    })
+    .then(function(response){
+      $scope.players = response.data;
+    })
+    .catch(function(error){
+      $scope.error = 'Something went wrong getting players from the database';
+    });
 
     $scope.player.search = function(playerName) {
       $scope.searchedPlayer = {};
