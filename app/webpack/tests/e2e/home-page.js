@@ -6,7 +6,7 @@ describe('Home page end 2 end testing', function(){
 
   it('should have a title of Webpack on the home page', function() {
     browser.get('/');
-    expect(browser.getTitle()).toEqual('Webpack');
+    expect(browser.getTitle()).toEqual('NBA Players App');
   });
 
   it('should redirect the user to the home page if false url', function() {
