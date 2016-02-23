@@ -2,9 +2,9 @@
 require('assert');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const start = require('.././src/app');
+const start = require('../.././src/app');
 const mainApp = start();
-const mongoose = require('.././src/database').mongoose;
+const mongoose = require('../.././src/database').mongoose;
 chai.use(chaiHttp);
 if (!global.Promise) {
   var q = require('q');
