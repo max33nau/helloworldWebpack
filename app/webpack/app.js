@@ -17,7 +17,9 @@ import angular from 'angular' ;
 import angularRoute from 'angular-route';
 
 
-const app = angular.module('myApp', [angularRoute]);
+const app = angular.module('myApp', [
+  angularRoute
+]);
 
 /* Controllers */
 import controller from './controllers'; // finds index.js

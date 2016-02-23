@@ -1,23 +1,28 @@
 'use strict';
 
+import dummyData from '../test-data/dummyDataPlayers';
+
 export default function(ngModule) {
   ngModule.controller('playerCtrl',['$scope', '$http', function($scope,$http) {
     var token = localStorage.getItem('token');
     $scope.player = {};
+    $scope.defaultFilter = {};
     $scope.players = [];
     $scope.searchedPlayer = {};
     $scope.showAll = false;
-    $http({
-      url: '/players',
-      method: 'GET',
-      headers: { 'token': token}
-    })
-    .then(function(response){
-      $scope.players = response.data;
-    })
-    .catch(function(error){
-      $scope.error = 'Something went wrong getting players from the database';
-    });
+    var x = dummyData();
+    $scope.players = x;
+    // $http({
+    //   url: '/players',
+    //   method: 'GET',
+    //   headers: { 'token': token}
+    // })
+    // .then(function(response){
+    //   $scope.players = response.data;
+    // })
+    // .catch(function(error){
+    //   $scope.error = 'Something went wrong getting players from the database';
+    // });
 
     $scope.player.search = function(playerName) {
       $scope.searchedPlayer = {};
@@ -41,5 +46,14 @@ export default function(ngModule) {
         $scope.error = 'Something went wrong getting players from the database';
       });
     };
-  }]);
+
+    $scope.player.removeFilter = function() {
+      $scope.selectedFilter = null;
+      $scope.filterByName = {};
+      $scope.filterByTeam = {};
+      $scope.filterByRookie = {};
+      $scope.filterByPosition = {};
+    };
+  }]
+);
 }
