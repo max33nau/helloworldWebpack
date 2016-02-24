@@ -11,11 +11,7 @@ export default function(ngModule) {
         $scope.error = 'You are already logged in.';
         return;
       } else {
-        var user = {
-          username: $scope.username,
-          password: $scope.password
-        };
-        $http.post('/user/signup', JSON.stringify(user))
+        $http.post('/user/signup', JSON.stringify($scope.user))
           .then(function(response){
             localStorage.setItem('token', response.data.token);
             localStorage.setItem('user', $scope.username);

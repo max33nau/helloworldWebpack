@@ -12,17 +12,23 @@ import loginTemplate from './views/login.html';
 import playerSearchTemplate from './views/playerSearch.html';
 import registerTemplate from './views/register.html';
 
-/* JS Vendors */
+/* Angular Vendors */
 import angular from 'angular' ;
 import angularRoute from 'angular-route';
+import angularMessages from 'angular-messages';
 
 /* Custom Filters */
 import filters from './filters';
 
+/* Components */
+import components from './components';
+
 
 const app = angular.module('myApp', [
   angularRoute,
-  filters
+  angularMessages,
+  filters,
+  components
 ]);
 
 /* Controllers */
