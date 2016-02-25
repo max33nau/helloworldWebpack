@@ -55,35 +55,36 @@
     </div>
     <div class='player-label'>
       Team:
-      <label ng-hide='editing'> {{player.team}} </label>
-      <input ng-blur="editing = false;" ng-show='editing' type="text" ng-model='updatePlayer.team' placeholder='{{player.team}}' class="input-text" />
+      <label ng-hide='player.editing'> {{player.team}} </label>
+      <input ng-show='player.editing' type="text" ng-model='player.team' placeholder='{{player.team}}' class="input-text" />
     </div>
     <div class='player-label'>
       Age:
-      <label ng-hide='editing'> {{player.age}} </label>
-      <input ng-blur="editing = false;" ng-show='editing' type="text" ng-model='updatePlayer.age' placeholder='{{player.age}}' class="input-text" />
+      <label ng-hide='player.editing'> {{player.age}} </label>
+      <input ng-show='player.editing' type="text" ng-model='player.age' placeholder='{{player.age}}' class="input-text" />
     </div>
     <div class='player-label'>
       Position:
-      <label ng-hide='editing'> {{player.position}} </label>
-      <input ng-blur="editing = false;" ng-show='editing' type="text" ng-model='updatePlayer.position' placeholder='{{player.position}}' class="input-text" />
+      <label ng-hide='player.editing'> {{player.position}} </label>
+      <input ng-show='player.editing' type="text" ng-model='player.position' placeholder='{{player.position}}' class="input-text" />
     </div>
     <div class='player-label'>
       Rookie:
-      <label ng-hide='editing'> {{player.rookie}} </label>
-      <label  ng-show='editing' class="radio-inline"><input type="radio" ng-model='updatePlayer.rookie' value="true"></input> True </label>
-      <label  ng-show='editing' class="radio-inline"><input type="radio" ng-model='updatePlayer.rookie' value="false"></input> False </label>
+      <label ng-hide='player.editing'> {{player.rookie}} </label>
+      <label  ng-show='player.editing' class="radio-inline"><input type="radio" ng-model='player.rookie' value="true"></input> True </label>
+      <label  ng-show='player.editing' class="radio-inline"><input type="radio" ng-model='player.rookie' value="false"></input> False </label>
     </div>
     <div class='player-label'>
       Years In The League:
-      <label ng-hide='editing'> {{player.yearsInTheLeauge}} </label>
-      <input ng-blur="editing = false;" ng-show='editing' type="text" ng-model='updatePlayer.yearsInTheLeauge' placeholder='{{player.yearsInTheLeauge}}'class="input-text" />
+      <label ng-hide='player.editing'> {{player.yearsInTheLeauge}} </label>
+      <input ng-show='player.editing' type="text" ng-model='player.yearsInTheLeauge' placeholder='{{player.yearsInTheLeauge}}'class="input-text" />
     </div>
-    <button class="btn btn-primary" ng-click='editing = true'> Edit </button>
-    <button class="btn btn-default" ng-click='editing = false'> Cancel </button>
-    <button class="btn btn-success" ng-click='admin.updatePlayer(player,updatePlayer)'> Save </button>
+    <button class="btn btn-primary" ng-click='admin.editPlayer(player)'> Edit </button>
+    <button class="btn btn-default" ng-click='admin.cancelEdit(player)'> Cancel </button>
+    <button class="btn btn-success" ng-click='admin.updatePlayer(player)'> Save </button>
     <button class="btn btn-danger" ng-click='admin.deletePlayer(player)'=> Delete </button>
     <p>{{admin.error}} </p>
+    <p>{{admin.success}} </p>
     <hr>
   </div>
 </div>
