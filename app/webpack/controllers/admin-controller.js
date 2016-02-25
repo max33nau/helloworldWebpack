@@ -1,7 +1,5 @@
 'use strict';
 
-import dummyPlayers from '../tests/mock-server-data/dummyDataPlayers';
-var testPlayers = dummyPlayers();
 export default function(ngModule) {
   ngModule.controller('adminCtrl',['$scope', '$http', function($scope,$http) {
     $scope.error = '';
@@ -10,7 +8,6 @@ export default function(ngModule) {
     $scope.admin = {};
     $scope.playerInfo = {};
     $scope.players = [];
-    $scope.players = testPlayers;
     $http({
       url: '/players',
       method: 'GET',
