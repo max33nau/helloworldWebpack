@@ -88,7 +88,6 @@ describe('Angular testing for adminCtrl', function(){
   });
 
 
-
   afterEach(function() {
     $httpBackend.verifyNoOutstandingExpectation();
     $httpBackend.verifyNoOutstandingRequest();
