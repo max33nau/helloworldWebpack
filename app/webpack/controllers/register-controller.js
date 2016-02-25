@@ -1,7 +1,7 @@
 'use strict';
 
 export default function(ngModule) {
-  ngModule.controller('registerCtrl',['$scope', '$http', function($scope,$http) {
+  ngModule.controller('registerCtrl',['$scope', '$http',  function($scope,$http) {
     $scope.success = '';
     $scope.error = '';
     $scope.register = function() {
@@ -18,7 +18,7 @@ export default function(ngModule) {
             $scope.success= 'Registratiion Successful';
           })
           .catch(function(error){
-            $scope.error = 'Taken Username or Invalid Password';
+            $scope.error = 'Taken Username, please try a different one.';
             console.log(error);
           });
       }

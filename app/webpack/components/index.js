@@ -1,6 +1,8 @@
-import validateUniqueUsername from './form-validations/validate-unique-username';
+import validateNoWhiteSpace from './form-validations/no-whitespace-validator';
+import validatePasswordParams from './form-validations/password-params-validator';
 
 const components = angular.module( 'components', [] );
 
-validateUniqueUsername( components );
+validateNoWhiteSpace( components );
+validatePasswordParams(components);
 export default components.name;
