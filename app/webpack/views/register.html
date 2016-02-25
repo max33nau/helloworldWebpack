@@ -42,7 +42,7 @@
     <br>
     <button type='submit' ng-click='registerForm.$valid ? register() : return' class="btn btn-default">Register</button>
   </form>
+  <br>
+  <p class='bg-success result'> {{registration.success}} </p>
+  <p class='bg-danger result'> {{error}} </p>
 </fieldset>
-<br>
-<p class='bg-success result'> {{success}} </p>
-<p class='bg-danger result'> {{error}} </p>
