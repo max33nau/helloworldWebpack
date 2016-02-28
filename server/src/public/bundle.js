@@ -94,7 +94,7 @@
 
 	var _components2 = _interopRequireDefault(_components);
 
-	var _controllers = __webpack_require__(34);
+	var _controllers = __webpack_require__(35);
 
 	var _controllers2 = _interopRequireDefault(_controllers);
 
@@ -12472,7 +12472,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.input-text {\n  width: 300px !important;\n  max-width: 100%;\n}\n.player-label {\n  margin-bottom: 5px;\n}\n\n.result {\n  width: 200px;\n  max-width: 100%;\n  margin-bottom: 20px;\n}\n\n#userName {\n  font-weight: bolder;\n  color: red;\n}\n\n.navInline {\n  margin-bottom: 5px;\n}\n.searchOnePlayer {\n  margin-top: 50px;\n}\n.showAll-button {\n  margin-bottom: 20px;\n}\n\n.filter-categories {\n  padding: 0 5px;\n  border-right: 2px solid black;\n  font-weight: bold;\n}\n\n.filter-categories:hover {\n  color: blue;\n  cursor: pointer;\n}\n\n\nfooter {\n  position: fixed;\n  bottom: 0px;\n  margin-top: 20px;\n  clear: both;\n  width: 100%;\n}\n", ""]);
+	exports.push([module.id, "\n.input-text {\n  width: 300px !important;\n  max-width: 100%;\n}\n.player-label {\n  margin-bottom: 5px;\n}\n\n.result {\n  width: 200px;\n  max-width: 100%;\n  margin-bottom: 20px;\n  font-weight: bolder;\n}\n\n#userName {\n  font-weight: bolder;\n  color: red;\n}\n\n.navInline {\n  margin-bottom: 5px;\n}\n.searchOnePlayer {\n  margin-top: 50px;\n}\n.showAll-button {\n  margin-bottom: 20px;\n}\n\n.filter-categories {\n  padding: 0 5px;\n  border-right: 2px solid black;\n  font-weight: bold;\n}\n\n.filter-categories:hover {\n  color: blue;\n  cursor: pointer;\n}\n\n\nfooter {\n  position: fixed;\n  bottom: 0px;\n  margin-top: 20px;\n  clear: both;\n  width: 100%;\n}\n", ""]);
 
 	// exports
 
@@ -12791,7 +12791,7 @@
 /* 19 */
 /***/ function(module, exports) {
 
-	module.exports = "<div ng-click='addplayer = true' class='btn btn-default navInline'> Add Player </div>\n<div ng-click='addplayer = false' class='btn btn-info navInline'> Edit Existing Players </div>\n<div ng-show='addplayer'>\n  <fieldset>\n    <legend> Add Player </legend>\n    <div class=\"form-group\">\n      <label>Name:</label>\n      <input type=\"text\" ng-model='playerInfo.name' class=\"form-control input-text\" />\n    </div>\n    <div class=\"form-group\">\n      <label>Team:</label>\n      <input type=\"text\" ng-model='playerInfo.team' class=\"form-control input-text\" />\n    </div>\n    <div class=\"form-group\">\n      <label>Age:</label>\n      <input type=\"text\" ng-model='playerInfo.age' class=\"form-control input-text\" />\n    </div>\n    <div class=\"form-group\">\n      <label>Position:</label>\n      <input type=\"text\" ng-model='playerInfo.position' class=\"form-control input-text\" />\n    </div>\n    <div class=\"form-group\">\n      Rookie:\n      <label class=\"radio-inline\"><input type=\"radio\" ng-model='playerInfo.rookie' value=\"true\"></input> True </label>\n      <label class=\"radio-inline\"><input type=\"radio\" ng-model='playerInfo.rookie' value=\"false\"></input> False </label>\n    </div>\n    <div class=\"form-group\">\n      <label>Years in The League:</label>\n      <input type=\"text\" ng-model='playerInfo.yearsInTheLeauge' class=\"form-control input-text\" />\n    </div>\n    <br>\n    <button ng-click='admin.createPlayer()' class=\"btn btn-default\">Create Player</button>\n\n    <br>\n    <br>\n  </fieldset>\n  <p class='bg-danger result'> {{error}} </p>\n  <p class='bg-success result'> {{success}} </p>\n  <br>\n  <br>\n  <br>\n</div>\n\n<div ng-hide='addplayer'>\n  <hr>\n  <div ng-repeat='player in players'>\n    <h5 class='text-center'> Player Info </h5>\n    <div class='player-label'>\n      Id:\n      <label> {{player._id}} </label>\n    </div>\n    <div class='player-label'>\n      Name:\n      <label> {{player.name}} </label>\n    </div>\n    <div class='player-label'>\n      Team:\n      <label ng-hide='editing'> {{player.team}} </label>\n      <input ng-blur=\"editing = false;\" ng-show='editing' type=\"text\" ng-model='updatePlayer.team' placeholder='{{player.team}}' class=\"input-text\" />\n    </div>\n    <div class='player-label'>\n      Age:\n      <label ng-hide='editing'> {{player.age}} </label>\n      <input ng-blur=\"editing = false;\" ng-show='editing' type=\"text\" ng-model='updatePlayer.age' placeholder='{{player.age}}' class=\"input-text\" />\n    </div>\n    <div class='player-label'>\n      Position:\n      <label ng-hide='editing'> {{player.position}} </label>\n      <input ng-blur=\"editing = false;\" ng-show='editing' type=\"text\" ng-model='updatePlayer.position' placeholder='{{player.position}}' class=\"input-text\" />\n    </div>\n    <div class='player-label'>\n      Rookie:\n      <label ng-hide='editing'> {{player.rookie}} </label>\n      <label  ng-show='editing' class=\"radio-inline\"><input type=\"radio\" ng-model='updatePlayer.rookie' value=\"true\"></input> True </label>\n      <label  ng-show='editing' class=\"radio-inline\"><input type=\"radio\" ng-model='updatePlayer.rookie' value=\"false\"></input> False </label>\n    </div>\n    <div class='player-label'>\n      Years In The League:\n      <label ng-hide='editing'> {{player.yearsInTheLeauge}} </label>\n      <input ng-blur=\"editing = false;\" ng-show='editing' type=\"text\" ng-model='updatePlayer.yearsInTheLeauge' placeholder='{{player.yearsInTheLeauge}}'class=\"input-text\" />\n    </div>\n    <button class=\"btn btn-primary\" ng-click='editing = true'> Edit </button>\n    <button class=\"btn btn-default\" ng-click='editing = false'> Cancel </button>\n    <button class=\"btn btn-success\" ng-click='admin.updatePlayer(player,updatePlayer)'> Save </button>\n    <button class=\"btn btn-danger\" ng-click='admin.deletePlayer(player)'=> Delete </button>\n    <p>{{admin.error}} </p>\n    <hr>\n  </div>\n</div>\n<br>\n";
+	module.exports = "<div ng-click='addplayer = true' class='btn btn-default navInline'> Add Player </div>\n<div ng-click='addplayer = false' class='btn btn-info navInline'> Edit Existing Players </div>\n<div ng-show='addplayer'>\n  <fieldset>\n    <legend> Add Player </legend>\n    <div class=\"form-group\">\n      <label>Name:</label>\n      <input type=\"text\" ng-model='playerInfo.name' class=\"form-control input-text\" />\n    </div>\n    <div class=\"form-group\">\n      <label>Team:</label>\n      <input type=\"text\" ng-model='playerInfo.team' class=\"form-control input-text\" />\n    </div>\n    <div class=\"form-group\">\n      <label>Age:</label>\n      <input type=\"text\" ng-model='playerInfo.age' class=\"form-control input-text\" />\n    </div>\n    <div class=\"form-group\">\n      <label>Position:</label>\n      <input type=\"text\" ng-model='playerInfo.position' class=\"form-control input-text\" />\n    </div>\n    <div class=\"form-group\">\n      Rookie:\n      <label class=\"radio-inline\"><input type=\"radio\" ng-model='playerInfo.rookie' value=\"true\"></input> True </label>\n      <label class=\"radio-inline\"><input type=\"radio\" ng-model='playerInfo.rookie' value=\"false\"></input> False </label>\n    </div>\n    <div class=\"form-group\">\n      <label>Years in The League:</label>\n      <input type=\"text\" ng-model='playerInfo.yearsInTheLeauge' class=\"form-control input-text\" />\n    </div>\n    <br>\n    <button ng-click='admin.createPlayer()' class=\"btn btn-default\">Create Player</button>\n\n    <br>\n    <br>\n  </fieldset>\n  <p class='bg-danger result'> {{error}} </p>\n  <p class='bg-success result'> {{success}} </p>\n  <br>\n  <br>\n  <br>\n</div>\n\n<div ng-hide='addplayer'>\n  <hr>\n  <div ng-repeat='player in players'>\n    <h5 class='text-center'> Player Info </h5>\n    <div class='player-label'>\n      Id:\n      <label> {{player._id}} </label>\n    </div>\n    <div class='player-label'>\n      Name:\n      <label> {{player.name}} </label>\n    </div>\n    <div class='player-label'>\n      Team:\n      <label ng-hide='player.editing'> {{player.team}} </label>\n      <input ng-show='player.editing' type=\"text\" ng-model='player.team' placeholder='{{player.team}}' class=\"input-text\" />\n    </div>\n    <div class='player-label'>\n      Age:\n      <label ng-hide='player.editing'> {{player.age}} </label>\n      <input ng-show='player.editing' type=\"text\" ng-model='player.age' placeholder='{{player.age}}' class=\"input-text\" />\n    </div>\n    <div class='player-label'>\n      Position:\n      <label ng-hide='player.editing'> {{player.position}} </label>\n      <input ng-show='player.editing' type=\"text\" ng-model='player.position' placeholder='{{player.position}}' class=\"input-text\" />\n    </div>\n    <div class='player-label'>\n      Rookie:\n      <label ng-hide='player.editing'> {{player.rookie}} </label>\n      <label  ng-show='player.editing' class=\"radio-inline\"><input type=\"radio\" ng-model='player.rookie' value=\"true\"></input> True </label>\n      <label  ng-show='player.editing' class=\"radio-inline\"><input type=\"radio\" ng-model='player.rookie' value=\"false\"></input> False </label>\n    </div>\n    <div class='player-label'>\n      Years In The League:\n      <label ng-hide='player.editing'> {{player.yearsInTheLeauge}} </label>\n      <input ng-show='player.editing' type=\"text\" ng-model='player.yearsInTheLeauge' placeholder='{{player.yearsInTheLeauge}}'class=\"input-text\" />\n    </div>\n    <button class=\"btn btn-primary\" ng-click='admin.editPlayer(player)'> Edit </button>\n    <button class=\"btn btn-default\" ng-click='admin.cancelEdit(player)'> Cancel </button>\n    <button class=\"btn btn-success\" ng-click='admin.updatePlayer(player)'> Save </button>\n    <button class=\"btn btn-danger\" ng-click='admin.deletePlayer(player)'> Delete </button>\n    <p>{{admin.error}} </p>\n    <p>{{admin.success}} </p>\n    <hr>\n  </div>\n</div>\n<br>\n";
 
 /***/ },
 /* 20 */
@@ -12815,7 +12815,7 @@
 /* 23 */
 /***/ function(module, exports) {
 
-	module.exports = "<fieldset>\n  <legend> Register </legend>\n  <form name='registerForm'>\n    <div class=\"form-group\">\n      <label>Username:</label>\n      <input type=\"text\"\n          name='username'\n          unique-username-validator\n          class=\"form-control input-text\"\n          ng-model='user.username'\n          ng-model-options='{ updateOn: \"mousedown blur\" }'\n          required />\n       <div ng-messages=\"registerForm.username.$error\" ng-if=\"registerForm.$submitted || registerForm.username.$touched\">\n          <div ng-message=\"required\">...</div>\n          <div ng-message=\"unique-username-validator\">This username is already taken!</div>\n       </div>\n    </div>\n    <div class=\"form-group\">\n      <label>Password: </label>\n      <input type=\"password\" ng-model='user.password' class=\"form-control input-text\" >\n    </div>\n    <br>\n    <button type='submit' ng-click='register()' class=\"btn btn-default\">Register</button>\n  </form>\n</fieldset>\n<br>\n<p class='bg-success result'> {{success}} </p>\n<p class='bg-danger result'> {{error}} </p>\n";
+	module.exports = "<fieldset>\n  <legend> Register </legend>\n  <form name='registerForm' novalidate >\n    <div class=\"form-group\" ng-class=\"{'has-success': registerForm.username.$valid }\">\n        <label>Username:</label>\n        <input type=\"text\"\n            name='username'\n            class=\"form-control input-text\"\n            ng-model='user.username'\n            ng-model-options=\"{ updateOn: 'default blur', debounce: { default: 250, blur: 0 } }\"\n            no-whitespace-validator\n            pattern='[a-zA-Z\\d]+'\n            required\n            minLength='5' />\n         <div ng-messages=\"registerForm.username.$error\" ng-if=\"registerForm.$submitted || registerForm.username.$touched\">\n            <div ng-message=\"required\" class='bg-danger result' >Username Required</div>\n            <div ng-message=\"minlength\" class='bg-danger result'>Username must be at least 5 characters...</div>\n            <div ng-message=\"noWhitespaceValidator\" class='bg-danger result'>Username cannot contain spaces</div>\n            <div ng-message=\"pattern\" class='bg-danger result'>Can only contain letters or numbers</div>\n         </div>\n    </div>\n    <div class=\"form-group\" ng-class=\"{'has-success': registerForm.password.$valid }\">\n      <label>Password: </label>\n      <input type=\"password\"\n        ng-model='user.password'\n        name='password'\n        class=\"form-control input-text\"\n        ng-model-options=\"{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }\"\n        no-whitespace-validator\n        password-params-validator\n        pattern='[a-zA-Z\\d]+'\n        minLength='6'\n        required />\n      <div ng-messages=\"registerForm.password.$error\" ng-if=\"registerForm.$submitted || registerForm.password.$touched\">\n         <div ng-message=\"required\" class='bg-danger result' >Password Required</div>\n         <div ng-message=\"minlength\" class='bg-danger result'>Passwardo must be at least 6 characters...</div>\n         <div ng-message=\"noWhitespaceValidator\" class='bg-danger result'>Password cannot contain spaces</div>\n         <div ng-message=\"passwordParamsValidator\" class='bg-danger result'>Password must contain at least one a-z, A-Z, 0-9</div>\n         <div ng-message=\"pattern\" class='bg-danger result'>Can only contain letters or numbers</div>\n      </div>\n    </div>\n    <br>\n    <button type='submit' ng-click='registerForm.$valid ? register() : return' class=\"btn btn-default\">Register</button>\n  </form>\n</fieldset>\n<br>\n<p class='bg-success result'> {{success}} </p>\n<p class='bg-danger result'> {{error}} </p>\n";
 
 /***/ },
 /* 24 */
@@ -45053,15 +45053,20 @@
 	  value: true
 	});
 
-	var _validateUniqueUsername = __webpack_require__(33);
+	var _noWhitespaceValidator = __webpack_require__(33);
 
-	var _validateUniqueUsername2 = _interopRequireDefault(_validateUniqueUsername);
+	var _noWhitespaceValidator2 = _interopRequireDefault(_noWhitespaceValidator);
+
+	var _passwordParamsValidator = __webpack_require__(34);
+
+	var _passwordParamsValidator2 = _interopRequireDefault(_passwordParamsValidator);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var components = angular.module('components', []);
 
-	(0, _validateUniqueUsername2.default)(components);
+	(0, _noWhitespaceValidator2.default)(components);
+	(0, _passwordParamsValidator2.default)(components);
 	exports.default = components.name;
 
 /***/ },
@@ -45075,21 +45080,51 @@
 	});
 
 	exports.default = function (ngModule) {
-	  ngModule.directive('uniqueUsernameValidator', ['$http', function ($http) {
+	  ngModule.directive('noWhitespaceValidator', function () {
 	    return {
 	      require: 'ngModel',
 	      link: function link($scope, element, attrs, ngModel) {
-	        ngModel.$asyncValidators.uniqueUsernameValidator = function (username) {
-	          console.log(username);
-	          //  $http.post('/user/signup', JSON.stringify(username));
+	        ngModel.$validators.noWhitespaceValidator = function (username) {
+	          if (!/[\s+$]/.test(username)) {
+	            return true;
+	          } else {
+	            return false;
+	          }
 	        };
 	      }
 	    };
-	  }]);
+	  });
 	};
 
 /***/ },
 /* 34 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	exports.default = function (ngModule) {
+	  ngModule.directive('passwordParamsValidator', function () {
+	    return {
+	      require: 'ngModel',
+	      link: function link($scope, element, attrs, ngModel) {
+	        ngModel.$validators.passwordParamsValidator = function (password) {
+	          if (/[A-Z]+/.test(password) && /[\d]+/.test(password) && /[a-z]+/.test(password)) {
+	            return true;
+	          } else {
+	            return false;
+	          }
+	        };
+	      }
+	    };
+	  });
+	};
+
+/***/ },
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45106,30 +45141,30 @@
 	  (0, _registerController2.default)(ngModule);
 	};
 
-	var _mainController = __webpack_require__(35);
+	var _mainController = __webpack_require__(36);
 
 	var _mainController2 = _interopRequireDefault(_mainController);
 
-	var _adminController = __webpack_require__(36);
+	var _adminController = __webpack_require__(37);
 
 	var _adminController2 = _interopRequireDefault(_adminController);
 
-	var _loginController = __webpack_require__(37);
+	var _loginController = __webpack_require__(38);
 
 	var _loginController2 = _interopRequireDefault(_loginController);
 
-	var _playerController = __webpack_require__(38);
+	var _playerController = __webpack_require__(39);
 
 	var _playerController2 = _interopRequireDefault(_playerController);
 
-	var _registerController = __webpack_require__(39);
+	var _registerController = __webpack_require__(40);
 
 	var _registerController2 = _interopRequireDefault(_registerController);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -45148,7 +45183,7 @@
 	};
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -45191,30 +45226,57 @@
 	      });
 	    };
 
-	    $scope.admin.updatePlayer = function (player, updatePlayer) {
+	    $scope.uneditedPlayer = {};
+
+	    $scope.admin.editPlayer = function (playerInfo) {
 	      $scope.admin.error = '';
-	      $scope.success = '';
-	      updatePlayer.name = player.name;
-	      updatePlayer._id = player._id;
+	      $scope.admin.success = '';
+	      playerInfo.editing = true;
+	      $scope.uneditedPlayer = angular.copy(playerInfo);
+	    };
+
+	    $scope.admin.cancelEdit = function (playerInfo) {
+	      $scope.admin.error = '';
+	      $scope.admin.success = '';
+	      playerInfo.editing = false;
+	      playerInfo.rookie = angular.copy($scope.uneditedPlayer.rookie);
+	      playerInfo.team = angular.copy($scope.uneditedPlayer.team);
+	      playerInfo.age = angular.copy($scope.uneditedPlayer.age);
+	      playerInfo.yearsInTheLeauge = angular.copy($scope.uneditedPlayer.yearsInTheLeauge);
+	      playerInfo.position = angular.copy($scope.uneditedPlayer.position);
+	    };
+
+	    $scope.admin.updatePlayer = function (player) {
+	      $scope.admin.error = '';
+	      $scope.admin.success = '';
+	      player.editing = false;
+	      var updatedPlayer = {};
+	      updatedPlayer._id = player._id;
+	      updatedPlayer.name = player.name;
+	      updatedPlayer.team = player.team;
+	      updatedPlayer.age = player.age;
+	      updatedPlayer.rookie = player.rookie;
+	      updatedPlayer.position = player.position;
 	      $http({
 	        url: '/players/' + player._id,
 	        method: 'PUT',
 	        headers: { 'token': token },
-	        data: updatePlayer
+	        data: updatedPlayer
 	      }).then(function (response) {
-	        for (var ii = 0; ii < $scope.players.length; ii++) {
-	          if ($scope.players[ii].name === player.name) {
-	            $scope.players[ii] = updatePlayer;
-	          }
-	        }
+	        $scope.admin.success = 'Player updated';
 	      }).catch(function (error) {
 	        $scope.admin.error = 'Update player went wrong';
+	        player.rookie = angular.copy($scope.uneditedPlayer.rookie);
+	        player.team = angular.copy($scope.uneditedPlayer.team);
+	        player.age = angular.copy($scope.uneditedPlayer.age);
+	        player.yearsInTheLeauge = angular.copy($scope.uneditedPlayer.yearsInTheLeauge);
+	        player.position = angular.copy($scope.uneditedPlayer.position);
 	      });
 	    };
 
 	    $scope.admin.deletePlayer = function (player) {
 	      $scope.admin.error = '';
-	      $scope.success = '';
+	      $scope.admin.success = '';
 	      var areYouSure = prompt("Are you sure you want to delete that player? yes/no");
 	      if (areYouSure === 'yes') {
 	        $http({
@@ -45237,7 +45299,7 @@
 	};
 
 /***/ },
-/* 37 */
+/* 38 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -45275,7 +45337,7 @@
 	};
 
 /***/ },
-/* 38 */
+/* 39 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -45334,7 +45396,7 @@
 	};
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -45359,7 +45421,7 @@
 	          localStorage.setItem('user', $scope.username);
 	          $scope.success = 'Registratiion Successful';
 	        }).catch(function (error) {
-	          $scope.error = 'Taken Username or Invalid Password';
+	          $scope.error = 'Taken Username, please try a different one.';
 	          console.log(error);
 	        });
 	      }
