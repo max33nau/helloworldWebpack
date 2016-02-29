@@ -8,9 +8,9 @@
   <body ng-controller='mainCtrl'>
     <main-nav nav-title='My Calendar'>
       <ul class='nav navbar-nav'>
-        <li><a ui-sref='mainPage'>Home</a></li>
-        <li><a ui-sref="#/searchPlayer">Search For Player</a></li>
-        <li ><a ui-sref='#/' >Logout</a></li>
+        <li><my-nav-link state='mainPage' page-name='Home' /></li>
+        <li><my-nav-link state="weeklyTasks" page-name='Weekly Tasks' /> </li>
+        <li> <my-nav-link state='logout' page-name='Logout' /> </li>
       </ul>
     </main-nav>
 

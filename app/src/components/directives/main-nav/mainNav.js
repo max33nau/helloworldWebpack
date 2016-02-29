@@ -8,9 +8,9 @@ export default function( ngModule ) {
 			restrict: 'E',
 			template,
       transclude: true,
-      link: function(scope, element, attributes) {
-        scope.navTitle = attributes.navTitle;
-      }
+    	scope: {
+				navTitle: '@'
+			}
 		};
 	});
 }
