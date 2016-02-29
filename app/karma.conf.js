@@ -8,13 +8,13 @@ module.exports = function(config) {
     frameworks: ['mocha', 'chai'],
     port: 9876,
     preprocessors: {
-      './webpack/app.js' : ['webpack'], // specifies the entry point in karma
-      './webpack/tests/unit/*.js': ['babel']
+      './src/app.js' : ['webpack'], // specifies the entry point in karma
+      './src/tests/unit/*.js': ['babel']
     },
     files: [
-      './webpack/app.js',
+      './src/app.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      './webpack/tests/unit/*.js'
+      './src/tests/unit/*.js'
     ],
     exclude: [],
     reporters: ['progress'],

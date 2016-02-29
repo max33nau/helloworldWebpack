@@ -6,11 +6,7 @@ const bodyParser = require('body-parser');
 const my = require('./config/configDBandServer');
 const dbData = require('./database');
 const mainPage = require('./routes/route-main');
-const searchPlayers = require('./routes/route-playerInfo');
 
-const Authenticat = require('authenticat');
-const connection = dbData.mongoose.createConnection(my.dbConnect + my.dbName);
-const authenticat = new Authenticat(connection);
 
 /**** START THE APP ****/
  module.exports = function start() {
@@ -32,9 +28,8 @@ const authenticat = new Authenticat(connection);
    app.use(cookieParser());
 
    /**** ROUTES ****/
-   app.use('/user', authenticat.router); // Authentication
    app.use('/', mainPage());
-   app.use('/players',authenticat.tokenAuth, searchPlayers(authenticat));
+   app.use('/players', searchPlayers());
 
    /**** ERROR HANDLING ****/
    app.use(function(request,response,next) {
@@ -61,6 +56,5 @@ const authenticat = new Authenticat(connection);
     };
   };
   mainApp.app = app;
-  mainApp.authenticat = authenticat;
   return mainApp;
 };

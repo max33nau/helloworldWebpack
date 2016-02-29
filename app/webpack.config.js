@@ -4,14 +4,14 @@ const path = require('path');
 const buildPublic = path.resolve(__dirname,'../server/src/public');
 
 module.exports = {
-  entry: './webpack/app.js',
+  entry: './src/app.js',
   output: {
     path: buildPublic,
     filename: 'bundle.js'
   },
   plugins: [
         new HtmlWebpackPlugin({
-          template: './webpack/views/index.html'
+          template: './src/views/index.html'
         }),
         new webpack.ProvidePlugin({
             $: "jquery",
