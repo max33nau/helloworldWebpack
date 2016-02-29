@@ -1,8 +1,11 @@
-import validateNoWhiteSpace from './form-validations/no-whitespace-validator';
-import validatePasswordParams from './form-validations/password-params-validator';
+'use strict';
+
+import formValidation from './form-validations';
+import directives from './directives';
 
 const components = angular.module( 'components', [] );
 
-validateNoWhiteSpace( components );
-validatePasswordParams(components);
+formValidation(components);
+directives(components);
+
 export default components.name;
