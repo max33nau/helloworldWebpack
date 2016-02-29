@@ -5,6 +5,7 @@ import './css/main.css';
 
 /* HTML Templates */
 import homeTemplate from './views/home.html';
+import weeklyTasksTemplate from './views/weeklyTasks.html';
 
 /* Angular Vendors */
 import angular from 'angular' ;
@@ -31,11 +32,17 @@ const app = angular.module('myApp', [
 
 app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
-
   $stateProvider
     .state('mainPage', {
       url: '/',
       template: homeTemplate,
+    })
+    .state('weeklyTasks', {
+      url: '/weeklyTasks',
+      template: weeklyTasksTemplate,
+    })
+    .state('weeklyTasks.day', {
+      url: '/:day',
     });
 
 }])
