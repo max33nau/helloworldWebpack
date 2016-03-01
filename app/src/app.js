@@ -20,7 +20,6 @@ import controllers from './controllers';
 /* config StateProvider */
 import configStateProvider from './stateProvider';
 
-
 const app = angular.module('myApp', [
   angularRouter,
   angularMessages,
@@ -35,6 +34,7 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlR
 }])
 .run(['$rootScope', '$location', function($rootScope,$location) {
     /* AUTHENTICATION WILL GO HERE */
+
 }]);
 
 angular.element(document).ready(function() {
