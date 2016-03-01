@@ -57,6 +57,7 @@
     "angular-ui-router": "^0.2.18",
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
-    "jquery": "^2.2.0"
+    "jquery": "^2.2.0",
+    "moment": "^2.11.2"
   }
 }
