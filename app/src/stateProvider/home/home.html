@@ -1,6 +1,11 @@
-<h3 class='text-center' id='homePageHeader'> Welcome! </h3>
-<p> This app is designed to give you a chance to organize your weekly tasks on a regular
-basis. It will keep track of what you need to get done each week and tasks you will have
-coming up. </p>
+<div class='text-center'>
+  <h3 class='text-center' id='homePageHeader'> Welcome! </h3>
+  <p> This app is designed to give you a chance to organize your weekly tasks on a regular
+  basis. It will keep track of what you need to get done each week and tasks you will have
+  coming up. </p>
 
-<p> The current day is : {{user.currentDate | currentDay}} </p>
+  <p> The current day is : {{user.currentDate | currentDay}} </p>
+
+  <button class='btn btn-primary'  ng-click='user.authenticate("twitter")'> Sign In With Twitter </button>
+
+</div>

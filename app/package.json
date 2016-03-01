@@ -58,6 +58,7 @@
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
     "jquery": "^2.2.0",
-    "moment": "^2.11.2"
+    "moment": "^2.11.2",
+    "satellizer": "^0.14.0"
   }
 }

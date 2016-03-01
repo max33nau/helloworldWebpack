@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const my = require('./config/configDBandServer');
 const dbData = require('./database');
 const mainPage = require('./routes/route-main');
+const auth = require('./routes/route-auth');
 
 
 /**** START THE APP ****/
@@ -29,7 +30,8 @@ const mainPage = require('./routes/route-main');
 
    /**** ROUTES ****/
    app.use('/', mainPage());
-   app.use('/players', searchPlayers());
+   app.use('/auth', auth());
+  // app.use('/players', searchPlayers());
 
    /**** ERROR HANDLING ****/
    app.use(function(request,response,next) {

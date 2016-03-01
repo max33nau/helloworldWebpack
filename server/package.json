@@ -4,7 +4,7 @@
   "description": "",
   "main": "bundle.js",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "eval $(cat .env) node ./src/index.js",
     "test": "gulp test"
   },
   "author": "Max Jacobsen",
@@ -18,7 +18,11 @@
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
-    "mongoose": "^4.4.3"
+    "jwt-simple": "^0.4.1",
+    "moment": "^2.11.2",
+    "mongoose": "^4.4.3",
+    "querystring": "^0.2.0",
+    "request": "^2.69.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

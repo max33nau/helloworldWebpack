@@ -1,4 +1,4 @@
-
+/*
 .input-text {
   width: 300px !important;
   max-width: 100%;
@@ -6,6 +6,7 @@
 .player-label {
   margin-bottom: 5px;
 }
+
 
 .result {
   width: 200px;
@@ -38,7 +39,7 @@
 .filter-categories:hover {
   color: blue;
   cursor: pointer;
-}
+}*/
 
 
 footer {
