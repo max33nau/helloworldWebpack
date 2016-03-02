@@ -2,12 +2,15 @@
 
 /* StateProvider Congifs */
 import homeState from './home/home';
-import weeklyTasksState from './weeklyTasks/weeklyTasks';
-import weeklyTasksDayState from './weeklyTasks/day/day';
+import playerSearchState from './playerSearch/playerSearch';
+import playerSearchPlayerState from './playerSearch/player/player';
+import adminState from './admin/admin';
+
 
 export default function($stateProvider) {
   $stateProvider
     .state('mainPage', homeState )
-    .state('weeklyTasks',weeklyTasksState)
-    .state('weeklyTasks.day', weeklyTasksDayState);
+    .state('searchPlayer',playerSearchState)
+    .state('searchPlayer.player', playerSearchPlayerState)
+    .state('admin', adminState);
 }
