@@ -8,6 +8,9 @@ import angular from 'angular' ;
 import angularRouter from 'angular-ui-router';
 import angularMessages from 'angular-messages';
 
+/* import services */
+import services from './services';
+
 /* authentication provider */
 import satellizer from 'satellizer';
 
@@ -26,6 +29,7 @@ import configStateProvider from './stateProvider';
 const app = angular.module('myApp', [
   angularRouter,
   angularMessages,
+  services,
   filters,
   components,
   controllers,
@@ -44,13 +48,16 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlR
   $urlRouterProvider.otherwise('/');
   configStateProvider($stateProvider);
 }])
-.run(['$rootScope', function($rootScope) {
+.run(['$rootScope', '$auth','$state','User', function($rootScope, $auth, $state, User) {
+
+    User.checkLogInStatus();
+
     $rootScope.$on('$stateChangeStart', function(event,toState, toParms){
-      var requireLogin = toState.data.requireLogin;
-      if(requireLogin && !$rootScope.currentUser) {
+      if(toState.data && toState.data.requireLogin && !$rootScope.currentUser && !$auth.isAuthenticated()) {
         event.preventDefault();
       }
     });
+
 
 }]);
 

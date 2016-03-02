@@ -79,7 +79,7 @@ bottom of a page and make sure to include a callback or you will get error */
             }
             var newUser = new User();
             newUser.twitter = profile.id;
-            newUser.displayName = profile.name;
+            newUser.displayName = profile.screen_name;
             newUser.save()
               .then(function(user) {
                 userInfo.name = user.displayName;

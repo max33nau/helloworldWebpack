@@ -7,11 +7,17 @@ export default {
     requireLogin: false
   },
   template,
-  controller: ['$scope', '$auth', function($scope, $auth) {
+  controller: ['$scope', '$auth','User', function($scope, $auth, User) {
     $scope.user = {};
     $scope.user.currentDate = new Date();
     $scope.user.authenticate = function(provider){
-      $auth.authenticate(provider);
+      $auth.authenticate(provider)
+        .then(function(response){
+          User.logIn(response.data);
+        })
+        .catch(function(error){
+          console.log(error);
+        });
     };
   }]
 };

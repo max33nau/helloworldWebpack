@@ -8,13 +8,12 @@
   <body>
     <main-nav nav-title='My Calendar'>
       <ul class='nav navbar-nav'>
-        <li><my-nav-link state='mainPage' page-name='Home' /></li>
-        <li><my-nav-link state="weeklyTasks" page-name='Weekly Tasks' /> </li>
-        <li><my-nav-link state='logout' page-name='Logout' /> </li>
+        <li><my-nav-link class='navLink' state='mainPage' page-name='Home' /></li>
+        <li><my-nav-link class='navLink' state="weeklyTasks" page-name='Weekly Tasks' /> </li>
       </ul>
     </main-nav>
 
-
+    <logout id='logout' ng-show='currentUser'> </logout>
     <div class='container'>
       <main ui-view> </main>
     </div>

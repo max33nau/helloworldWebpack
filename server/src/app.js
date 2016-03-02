@@ -28,6 +28,16 @@ const auth = require('./routes/route-auth');
    app.use(bodyParser.urlencoded({ extended: false }));
    app.use(cookieParser());
 
+
+   /**** ALLOW REQUEST FROM OTHER URLS ****/
+   app.use( ( req, response, next ) => {
+   	const url = '*';
+   	response.header( 'Access-Control-Allow-Origin', url );
+   	response.header( 'Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE' );
+   	response.header( 'Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization' );
+   	next();
+   });
+
    /**** ROUTES ****/
    app.use('/', mainPage());
    app.use('/auth', auth());
