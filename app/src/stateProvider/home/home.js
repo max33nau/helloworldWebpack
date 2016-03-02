@@ -9,7 +9,6 @@ export default {
   template,
   controller: ['$scope', '$auth','User', function($scope, $auth, User) {
     $scope.user = {};
-    $scope.user.currentDate = new Date();
     $scope.user.authenticate = function(provider){
       $auth.authenticate(provider)
         .then(function(response){
