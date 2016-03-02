@@ -1,0 +1,15 @@
+<div>
+  <form ng-show='showAddPlayerForm'>
+    <h4> {{formHeader}} </h4>
+    <new-player-input input-name='Name:' input-type='text' input-model='playerInfo.name'> </new-player-input>
+    <new-player-input input-name='Team:' input-type='text' input-model='playerInfo.team'> </new-player-input>
+    <new-player-input input-name='Age:' input-type='text' input-model='playerInfo.age'> </new-player-input>
+    <new-player-input input-name='Position:' input-type='text' input-model='playerInfo.position'> </new-player-input>
+    <new-player-input input-name='Years in the league:' input-type='text' input-model='playerInfo.yearsInTheLeauge'> </new-player-input>
+    <br>
+    <button ng-click='playerInfo.createPlayer()' class="btn btn-default">Create Player</button>
+    <br>
+    <p class='bg-danger result'> {{error}} </p>
+    <p class='bg-success result'> {{success}} </p>
+  </form>
+</div>

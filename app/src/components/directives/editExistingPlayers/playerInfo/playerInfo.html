@@ -1,0 +1,22 @@
+<div>
+  <h5 class='text-center'> Player Info </h5>
+  <player-label label-name='Id:' label-value='player._id'> </player-label>
+  <player-label label-name='Name' label-value='player.name'> </player-label>
+  <player-label hide-label='editing' label-name='Team:' label-value='player.team'>
+    <edit-player editing-player='editing' player-model='player.team'> </edit-player>
+  </player-label>
+  <player-label hide-label='editing' label-name='Age:' label-value='player.age'>
+    <edit-player editing-player='editing' player-model='player.age'> </edit-player>
+  </player-label>
+  <player-label hide-label='editing' label-name='Position:' label-value='player.position'>
+    <edit-player editing-player='editing' player-model='player.position'> </edit-player>
+  </player-label>
+  <player-label hide-label='editing' label-name='Years In The League:' label-value='player.yearsInTheLeauge'>
+    <edit-player editing-player='editing' player-model='player.yearsInTheLeauge'> </edit-player>
+  </player-label>
+  <button class="btn btn-primary" ng-click='specificPlayer.edit()'> Edit </button>
+  <button class="btn btn-default" ng-click='specificPlayer.cancelEdit()'> Cancel </button>
+  <button class="btn btn-success" ng-click='specificPlayer.save()'> Save </button>
+  <button class="btn btn-danger" ng-click='specificPlayer.delete()'> Delete </button>
+  <hr>
+</div>

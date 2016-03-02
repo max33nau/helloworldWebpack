@@ -7,4 +7,8 @@ export default {
     requireLogin: true
   },
   template,
+  controller: ['$scope', function($scope){
+    $scope.admin = {};
+    $scope.admin.addPlayer = true;  
+  }]
 };

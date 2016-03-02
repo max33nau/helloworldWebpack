@@ -1,0 +1,6 @@
+<div>
+  <div ng-hide='hideAddPlayerForm'>
+    <div ng-repeat='player in players.existing'>
+      <player-info player='player' remove-player='players.removePlayer(player)'> </player-info>
+  </div>
+</div>
