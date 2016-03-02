@@ -4,14 +4,14 @@
 }
 
 #logout {
-  float: right;
+  text-align: right !important;
   color: red;
   padding: 10px;
   position: relative;
   cursor: pointer;
+  margin-top: 5px;
 }
 
-/*
 .input-text {
   width: 300px !important;
   max-width: 100%;
@@ -30,7 +30,9 @@
 
 #userName {
   font-weight: bolder;
-  color: red;
+  color: white;
+  float: right;
+  margin: 15px;
 }
 
 .navInline {
@@ -52,7 +54,7 @@
 .filter-categories:hover {
   color: blue;
   cursor: pointer;
-}*/
+}
 
 
 footer {

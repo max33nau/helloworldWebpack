@@ -41,7 +41,7 @@ const auth = require('./routes/route-auth');
    /**** ROUTES ****/
    app.use('/', mainPage());
    app.use('/auth', auth());
-  // app.use('/players', searchPlayers());
+   app.use('/players', searchPlayers());
 
    /**** ERROR HANDLING ****/
    app.use(function(request,response,next) {

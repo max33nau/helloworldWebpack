@@ -20,9 +20,6 @@ import filters from './filters';
 /* Components */
 import components from './components';
 
-/* Controllers */
-import controllers from './controllers';
-
 /* config StateProvider */
 import configStateProvider from './stateProvider';
 
@@ -32,7 +29,6 @@ const app = angular.module('myApp', [
   services,
   filters,
   components,
-  controllers,
   satellizer
 ]);
 

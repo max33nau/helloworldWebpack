@@ -1,9 +1,9 @@
 'use strict';
 import angular from 'angular';
-import currentDayFilter from './currentDayFilter';
+import experienceFilter from './experience-filter';
 
 const filters = angular.module( 'filters', [] );
 
-currentDayFilter(filters);
+experienceFilter(filters);
 
 export default filters.name;
