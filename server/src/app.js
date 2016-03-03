@@ -7,6 +7,7 @@ const my = require('./config/configDBandServer');
 const dbData = require('./database');
 const mainPage = require('./routes/route-main');
 const auth = require('./routes/route-auth');
+const searchPlayers = require('./routes/route-playerInfo');
 
 
 /**** START THE APP ****/

@@ -7,7 +7,6 @@ export default {
   controller: ['$scope', function($scope){
     $scope.defaultFilter = {};
     $scope.user.removeFilter = function() {
-      console.log('clicked');
       $scope.user.selectedFilter = null;
       $scope.filterByName = {};
       $scope.filterByTeam = {};

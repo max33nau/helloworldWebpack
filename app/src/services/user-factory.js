@@ -8,9 +8,11 @@ export default function( ngModule ) {
         $rootScope.currentUser = $window.localStorage.username;
 			},
       checkLogInStatus() {
-        if(!!$window.localStorage.username) {
+        if($window.localStorage.username) {
           $rootScope.currentUser = $window.localStorage.username;
-        }
+        } else {
+					$rootScope.currentUser = '';
+				}
       },
       logout() {
         $window.localStorage.username = null;
