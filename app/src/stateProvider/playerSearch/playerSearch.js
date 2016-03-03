@@ -14,6 +14,7 @@ export default {
               return response.data;
             })
             .catch(function(error){
+              console.log(error);
               return error;
             });
     }

@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const jwt = require('jwt-simple');
+const moment = require('moment');
 const my = require('./config/configDBandServer');
 const dbData = require('./database');
 const mainPage = require('./routes/route-main');
@@ -39,10 +41,35 @@ const searchPlayers = require('./routes/route-playerInfo');
    	next();
    });
 
+   /* CHECK AUTHORIZATION TOKEN MIDDLEWARE */
+   function ensureAuthenticated(request, response, next) {
+     if ( request.method === 'OPTIONS' ) {
+       return next();
+     }
+     if (!request.header('Authorization')) {
+       return response.status(401).send({ message: 'Please make sure your request has an Authorization header' });
+     }
+     var token = request.header('Authorization').split(' ')[1];
+     var payload = null;
+     var config = process.env;
+     try {
+       payload = jwt.decode(token, config.MY_SECRET_TOKEN);
+     }
+     catch (err) {
+       return response.status(401).send({ message: err.message });
+     }
+
+     if (payload.exp <= moment().unix()) {
+       return response.status(401).send({ message: 'Token has expired' });
+     }
+     request.user = payload.sub;
+     next();
+   }
+
    /**** ROUTES ****/
    app.use('/', mainPage());
    app.use('/auth', auth());
-   app.use('/players', searchPlayers());
+   app.use('/players',ensureAuthenticated, searchPlayers());
 
    /**** ERROR HANDLING ****/
    app.use(function(request,response,next) {
