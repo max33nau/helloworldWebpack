@@ -3,13 +3,26 @@ import welcomeTemplate from './welcome/welcome.html';
 import signInTemplate from './signIn/signIn.html';
 
 export default {
-  url: '/',
+  url: '/?admin',
   data: {
     requireLogin: false
   },
   views: {
-    'welcome': {template: welcomeTemplate},
-    'signIn': {template: signInTemplate,
+    '@': {
+      template: "<div ng-show='adminAuthorized'><my-nav-link class='navLink' state='admin' page-name='Admin'/> </div>",
+      controller: ['$scope', '$stateParams', function($scope,$stateParams) {
+          if($stateParams.admin === 'max') { // will be a better secret eventually
+            $scope.adminAuthorized = true;
+          } else {
+            $scope.adminAuthorized = false;
+          }
+       }]
+     },
+    'welcome': {
+      template: welcomeTemplate
+    },
+    'signIn': {
+      template: signInTemplate,
       controller: ['$scope', '$auth','User', function($scope, $auth, User) {
         $scope.user = {};
         $scope.user.authenticate = function(provider){
@@ -20,7 +33,9 @@ export default {
             .catch(function(error){
               console.log(error);
             });
-        };
-      }]}
+          };
+        }]
+      }
     }
+
 };

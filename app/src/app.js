@@ -41,7 +41,7 @@ app.config(['$authProvider','baseUrl', function($authProvider, baseUrl){
 }]);
 
 app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlRouterProvider) {
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/?admin');
   configStateProvider($stateProvider);
 }])
 .run(['$rootScope', '$auth','$state','User', function($rootScope, $auth, $state, User) {

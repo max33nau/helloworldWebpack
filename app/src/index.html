@@ -10,7 +10,6 @@
       <ul class='nav navbar-nav'>
         <li><my-nav-link class='navLink' state='mainPage' page-name='Home' /></li>
         <li><my-nav-link class='navLink' state='searchPlayer' page-name='Search For Player' /> </li>
-        <li><my-nav-link class='navLink' state='admin' page-name='Admin'/> </li>
         <li> <logout id='logout' ng-show='currentUser'> </logout> </li>
         <div ng-show='currentUser' id='userName' > User: {{currentUser}} </div>
       </ul>
@@ -21,6 +20,7 @@
       <main ui-view> </main>
       <div ui-view='welcome'> </div>
       <div ui-view='signIn'> </div>
+      <div ui-view='adminLink'> </div>
     </div>
 
     <footer class='panel-footer footer'>
