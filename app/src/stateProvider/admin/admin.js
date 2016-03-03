@@ -9,6 +9,6 @@ export default {
   template,
   controller: ['$scope', function($scope){
     $scope.admin = {};
-    $scope.admin.addPlayer = true;  
+    $scope.admin.addPlayer = true;
   }]
 };
