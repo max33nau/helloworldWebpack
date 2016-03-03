@@ -10,9 +10,15 @@ export default function( ngModule ) {
     	scope: {
         hideAddPlayerForm: '='
 			},
-			controller: ['$scope', '$http', function($scope,$http) {
+			controller: ['$scope', 'PlayerInfo', function($scope,PlayerInfo) {
         $scope.players = {};
-        $scope.players.existing = [];
+				PlayerInfo.getAll()
+					.then(function(response){
+				   	$scope.players.existing = response.data;
+					})
+					.catch(function(error){
+				  	console.log(error);
+					});
         $scope.players.removePlayer = function(player) {
           for(var ii = 0; ii < $scope.players.existing.length; ii++){
             if($scope.players.existing[ii].name === player.name) {

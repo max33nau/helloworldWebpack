@@ -24,7 +24,8 @@
 .result {
   width: 200px;
   max-width: 100%;
-  margin-bottom: 20px;
+  margin: 20px;
+  padding: 20px;
   font-weight: bolder;
 }
 
@@ -54,13 +55,4 @@
 .filter-categories:hover {
   color: blue;
   cursor: pointer;
-}
-
-
-footer {
-  position: fixed;
-  bottom: 0px;
-  margin-top: 20px;
-  clear: both;
-  width: 100%;
 }

@@ -11,7 +11,7 @@ export default function( ngModule ) {
 				formHeader: '@',
         showAddPlayerForm: '='
 			},
-			controller: ['$scope', '$http', function($scope,$http) {
+			controller: ['$scope', 'PlayerInfo', function($scope,PlayerInfo) {
 		    $scope.error = '';
 		    $scope.success = '';
 		    $scope.playerInfo = {};
@@ -23,18 +23,14 @@ export default function( ngModule ) {
 					}
 		      $scope.error = '';
 		      $scope.success = '';
-		      $http({
-		        url: '/players',
-		        method: 'POST',
-		        data: $scope.playerInfo
-		      })
-		      .then(function(response){
-		        $scope.success = response.data.name + ' was added to the database.';
-		        $scope.playerInfo = {};
-		      })
-		      .catch(function(error){
-		        $scope.error = 'The right criteria was not met for adding a new player';
-		      });
+					PlayerInfo.createNewPlayer($scope.playerInfo)
+		      	.then(function(response){
+		        	$scope.success = response.data.name + ' was added to the database.';
+		        	$scope.playerInfo = {};
+		      	})
+		      	.catch(function(error){
+		        	$scope.error = 'The right criteria was not met for adding a new player';
+		      	});
 		    };
 		  }]
 		};

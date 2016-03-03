@@ -18,5 +18,8 @@
   <button class="btn btn-default" ng-click='specificPlayer.cancelEdit()'> Cancel </button>
   <button class="btn btn-success" ng-click='specificPlayer.save()'> Save </button>
   <button class="btn btn-danger" ng-click='specificPlayer.delete()'> Delete </button>
+  <br>
+  <p ng-show='specificPlayer.success' class='text-success'> {{specificPlayer.success}} </p>
+  <p ng-hide='specificPlayer.success' class='text-error'> {{specificPlayer.error}} </p>
   <hr>
 </div>

@@ -9,7 +9,7 @@
     <br>
     <button ng-click='playerInfo.createPlayer()' class="btn btn-default">Create Player</button>
     <br>
-    <p class='bg-danger result'> {{error}} </p>
-    <p class='bg-success result'> {{success}} </p>
+    <p ng-show='error' class='bg-danger result'> {{error}} </p>
+    <p ng-show='success' class='bg-success result'> {{success}} </p>
   </form>
 </div>

@@ -11,9 +11,11 @@ export default function( ngModule ) {
         player: '=',
         removePlayer: '&'
 			},
-			controller: ['$scope', '$http', function($scope,$http) {
+			controller: ['$scope', 'PlayerInfo', function($scope,PlayerInfo) {
         $scope.specificPlayer = {};
         $scope.uneditedPlayer = {};
+				$scope.specificPlayer.success = '';
+				$scope.specificPlayer.error = '';
         $scope.specificPlayer.edit = function() {
           $scope.editing = true;
           $scope.uneditedPlayer = angular.copy($scope.player);
@@ -31,35 +33,28 @@ export default function( ngModule ) {
           } else {
             $scope.player.rookie = false;
           }
-          $http({
-            url: '/players/'+$scope.player._id,
-            method: 'PUT',
-            data: $scope.player
-          })
-          .then(function(response){
-            $scope.specifiedPlayer.success = 'Player updated';
-            $scope.uneditedPlayer = {};
-          })
-          .catch(function(error){
-            $scope.specifiedPlayer.error = 'Update player went wrong';
-            $scope.player = angular.copy($scope.uneditedPlayer);
-          });
+        	PlayerInfo.update($scope.player)
+          	.then(function(response){
+            	$scope.specificPlayer.success = 'Player updated';
+            	$scope.uneditedPlayer = {};
+          	})
+          	.catch(function(error){
+            	$scope.specificPlayer.error = 'Update player went wrong';
+            	$scope.player = angular.copy($scope.uneditedPlayer);
+          	});
         };
 
         $scope.specificPlayer.delete = function() {
           var areYouSure = prompt("Are you sure you want to delete that player? yes/no");
           if(areYouSure === 'yes') {
-            $http({
-              url: '/players/'+$scope.player._id,
-              method: 'DELETE'
-            })
-            .then(function(response){
-              $scope.removePlayer($scope.player);
-            })
-            .catch(function(error){
-              console.log(error);
-              $scope.specifiedPlayer.error = 'Delete attempt was unsuccessful';
-            });
+        		PlayerInfo.delete($scope.player)
+            	.then(function(response){
+              	$scope.removePlayer($scope.player);
+            	})
+            	.catch(function(error){
+              	console.log(error);
+              	$scope.specificPlayer.error = 'Delete attempt was unsuccessful';
+            	});
           }
         };
 		  }]
