@@ -1,0 +1,54 @@
+<div>
+  <div class='text-center'>
+    <p> Filter By:
+      <span class='filter-categories' ng-click='user.selectedFilter.name = true'> Name </span>
+      <span class='filter-categories' ng-click='user.selectedFilter.team = true'> Team </span>
+      <span class='filter-categories' ng-click='user.selectedFilter.position = true'> Position </span>
+      <span class='filter-categories' ng-click='user.selectedFilter.rookie = true'> Rookie </span>
+      <span class='filter-categories' ng-click='user.removeFilter()'> Remove Filter </span>
+    </p>
+    <div ng-show='user.selectedFilter.name'>
+      Name:
+      <input type='text' ng-model='filterByName.name'/>
+    </div>
+
+    <div ng-show='user.selectedFilter.team'>
+      Team:
+      <input type='text' ng-model='filterByTeam.team'/>
+    </div>
+
+    <div ng-show='user.selectedFilter.position'>
+      Position:
+      <input type='text' ng-model='filterByPosition.position'/>
+    </div>
+
+    <div ng-show='user.selectedFilter.rookie'>
+      Rookie:
+      <label class="radio-inline"><input type="radio" ng-model='filterByRookie.rookie' value="true"></input> True </label>
+      <label class="radio-inline"><input type="radio" ng-model='filterByRookie.rookie' value="false"></input> False </label>
+    </div>
+  </div>
+
+  <table class="table">
+     <thead>
+       <tr>
+         <th>Name</th>
+         <th>Team</th>
+         <th>Position</th>
+         <th>Age</th>
+         <th>Rookie</th>
+         <th>Years in the League</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr ng-repeat='playerInfo in user.existingPlayers | filter: defaultFilter | filter : filterByName | filter: filterByTeam | filter: filterByPosition | filter: filterByRookie | orderBy: "name"'>
+         <td>{{playerInfo.name}}</td>
+         <td>{{playerInfo.team}}</td>
+         <td>{{playerInfo.position}}</td>
+         <td>{{playerInfo.age}}</td>
+         <td>{{playerInfo.rookie}}</td>
+         <td>{{playerInfo.yearsInTheLeauge}}</td>
+       </tr>
+     </tbody>
+   </table>
+</div>
