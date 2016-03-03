@@ -35,6 +35,7 @@ export default function( ngModule ) {
           }
         	PlayerInfo.update($scope.player)
           	.then(function(response){
+							PlayerInfo.updateCache($scope.player);
             	$scope.specificPlayer.success = 'Player updated';
             	$scope.uneditedPlayer = {};
           	})
@@ -50,6 +51,7 @@ export default function( ngModule ) {
         		PlayerInfo.delete($scope.player)
             	.then(function(response){
               	$scope.removePlayer($scope.player);
+								PlayerInfo.removeCache();
             	})
             	.catch(function(error){
               	console.log(error);

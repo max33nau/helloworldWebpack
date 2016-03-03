@@ -11,7 +11,7 @@ export default function( ngModule ) {
 				formHeader: '@',
         showAddPlayerForm: '='
 			},
-			controller: ['$scope', 'PlayerInfo', function($scope,PlayerInfo) {
+			controller: ['$scope', 'PlayerInfo', '$cacheFactory',function($scope,PlayerInfo, $cacheFactory) {
 		    $scope.error = '';
 		    $scope.success = '';
 		    $scope.playerInfo = {};
@@ -27,6 +27,7 @@ export default function( ngModule ) {
 		      	.then(function(response){
 		        	$scope.success = response.data.name + ' was added to the database.';
 		        	$scope.playerInfo = {};
+							$cacheFactory.get('player').removeAll();
 		      	})
 		      	.catch(function(error){
 		        	$scope.error = 'The right criteria was not met for adding a new player';

@@ -21,5 +21,4 @@ export default function( ngModule ) {
   playerInfo(ngModule);
   playerLabel(ngModule);
   editPlayer(ngModule);
-
 }
