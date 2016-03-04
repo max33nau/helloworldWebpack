@@ -6,13 +6,13 @@ export default function( ngModule ) {
 				$window.localStorage.username = userInfo.name;
         $window.localStorage.token = userInfo.token;
         $rootScope.currentUser = $window.localStorage.username;
+				$rootScope.error='';
 			},
       checkLogInStatus() {
-        if($window.localStorage.username) {
+				$rootScope.currentUser = '';
+        if($window.localStorage.username !== 'null') {
           $rootScope.currentUser = $window.localStorage.username;
-        } else {
-					$rootScope.currentUser = '';
-				}
+        }
       },
       logout() {
         $window.localStorage.username = null;

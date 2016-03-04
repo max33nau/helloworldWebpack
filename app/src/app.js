@@ -51,6 +51,10 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlR
     $rootScope.$on('$stateChangeStart', function(event,toState, toParms){
       if(toState.data && toState.data.requireLogin && !$rootScope.currentUser && !$auth.isAuthenticated()) {
         event.preventDefault();
+        $state.transitionTo('mainPage');
+        $rootScope.error = 'You must be logged in to view that page';
+      } else {
+        $rootScope.error='';
       }
     });
 
