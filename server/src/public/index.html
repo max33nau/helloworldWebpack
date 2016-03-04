@@ -10,7 +10,6 @@
       <ul class='nav navbar-nav'>
         <li><my-nav-link class='navLink' state='mainPage' page-name='Home' /></li>
         <li><my-nav-link class='navLink' state='searchPlayer' page-name='Search For Player' /> </li>
-        <li><my-nav-link class='navLink' state='admin' page-name='Admin'/> </li>
         <li> <logout id='logout' ng-show='currentUser'> </logout> </li>
         <div ng-show='currentUser' id='userName' > User: {{currentUser}} </div>
       </ul>
@@ -19,10 +18,12 @@
 
     <div class='container'>
       <main ui-view> </main>
+      <div ui-view='welcome'> </div>
+      <div ui-view='signIn'> </div>
+      <div ui-view='adminLink'> </div>
+      <h5 class='txt-error text-center'> {{error}} </h5>
     </div>
 
-    <footer class='panel-footer footer'>
-      <p class='text-center'> @MaxJacobsen </p>
-    </footer>
+
   <script src="bundle.js"></script></body>
 </html>

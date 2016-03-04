@@ -9,7 +9,7 @@ module.exports = function(config) {
     port: 9876,
     preprocessors: {
       './src/app.js' : ['webpack'], // specifies the entry point in karma
-      './src/tests/unit/*.js': ['babel']
+      './src/tests/unit/**/*.js': ['babel']
     },
     files: [
       './src/app.js',
