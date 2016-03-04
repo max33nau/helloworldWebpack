@@ -34,6 +34,10 @@ const app = angular.module('myApp', [
 
 app.constant('baseUrl', 'http://localhost:3333');
 
+app.config(['PlayerInfoProvider','baseUrl',function(PlayerInfoProvider, baseUrl){
+  PlayerInfoProvider.setUrl(baseUrl);
+}]);
+
 app.config(['$authProvider','baseUrl', function($authProvider, baseUrl){
   $authProvider.twitter({
     url: baseUrl+'/auth/twitter',
