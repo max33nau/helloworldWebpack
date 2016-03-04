@@ -14,7 +14,7 @@ module.exports = function(config) {
     files: [
       './src/app.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      './src/tests/unit/*.js'
+      './src/tests/unit/**/*.js'
     ],
     exclude: [],
     reporters: ['progress'],
