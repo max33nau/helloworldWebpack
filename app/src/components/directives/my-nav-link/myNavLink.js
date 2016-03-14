@@ -1,5 +1,6 @@
 'use strict';
 import template from './myNavLink.html';
+import style from './myNavLink.scss';
 
 export default function( ngModule ) {
 	ngModule.directive( 'myNavLink', function(){
@@ -10,7 +11,11 @@ export default function( ngModule ) {
       scope: {
         state: '@',
         pageName: '@'
-      }
+      },
+			controller: function($scope) {
+				$scope.styles = style;
+				console.log($scope.styles);
+			}
 		};
 	});
 }

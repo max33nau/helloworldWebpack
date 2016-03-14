@@ -1,0 +1,36 @@
+.main-header {
+  background-color: $banner-background-color;
+  color: $banner-text-color;
+  h1 {
+    font-family: $mainHeaderFont;
+  }
+}
+
+.main-nav {
+  margin-bottom: 20px;
+  background-color: $nav-background-color;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  span {
+    color: #08E4E1;
+    padding: 5px;
+  }
+  .nav-list-item {
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    color: $nav-list-color;
+    cursor: pointer;
+    &:hover {
+      color: $nav-list-color-hover;
+    }
+  }
+
+
+}

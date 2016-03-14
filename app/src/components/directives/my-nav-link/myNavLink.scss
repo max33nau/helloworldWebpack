@@ -1,0 +1,9 @@
+@import '../../../style/themes/style-assets';
+
+:local(.navLink) {
+  text-decoration: none;
+  color: $nav-list-color;
+  &:hover {
+    color: $nav-list-color-hover;
+  }
+}

@@ -7,10 +7,7 @@ export default function( ngModule ) {
 			replace: true,
 			restrict: 'E',
 			template,
-      transclude: true,
-    	scope: {
-				navTitle: '@'
-			}
+      transclude: true
 		};
 	});
 }

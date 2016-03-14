@@ -16,13 +16,13 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: 'jquery'
-        }),
+        })
   ],
   module: {
     preLoaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, './src/vendors/*.js'],
         loader: 'jshint-loader'
       }
     ],
