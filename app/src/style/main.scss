@@ -1,6 +1,10 @@
+
+$black-background: red;
+
 .mainNav {
   display:block;
   padding-right: 20px !important;
+  background-color: $black-background;
 }
 
 #logout {

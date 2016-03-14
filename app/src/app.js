@@ -1,7 +1,7 @@
 'use strict';
 
 /* CSS Styling */
-import './css/main.css';
+import './style/main.scss';
 
 /* Angular Vendors */
 import angular from 'angular' ;

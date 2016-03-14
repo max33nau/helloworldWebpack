@@ -32,6 +32,10 @@ module.exports = {
         loader:'style!css'
       },
       {
+	      test: /\.scss$/,
+        loaders: ['style', 'css', 'postcss', 'sass']
+      },
+      {
         test: /\.js?$/,
         exclude: /node_modules/,
         loader: 'babel',
@@ -46,6 +50,6 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.css']
+    extensions: ['', '.js', '.css','.scss']
   }
 };
