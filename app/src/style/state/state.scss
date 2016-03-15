@@ -1,0 +1,18 @@
+@mixin screenSize($maxWidth, $fontSize) {
+  @media(max-width: $maxWidth) {
+    body{
+
+      header {
+        font-size: $fontSize;
+      }
+      nav {
+        font-size: $fontSize;
+      }
+    }
+  }
+}
+
+
+@include screenSize(600px, 0.75em);
+
+@include screenSize(400px, 0.5em);
