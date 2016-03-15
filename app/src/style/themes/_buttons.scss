@@ -1,0 +1,33 @@
+.btn {
+  padding:10px;
+  border: 2px solid black;
+  font-weight: bolder;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 75px;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+  }
+}
+
+
+.btn-default {
+  @extend .btn;
+  background-color: $lightblue;
+}
+
+.btn-success {
+  @extend .btn;
+  background-color: green;
+}
+
+.btn-danger {
+  @extend .btn;
+  background-color: red;
+}

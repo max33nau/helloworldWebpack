@@ -14,10 +14,12 @@
   <player-label hide-label='editing' label-name='Years In The League:' label-value='player.yearsInTheLeauge'>
     <edit-player editing-player='editing' player-model='player.yearsInTheLeauge'> </edit-player>
   </player-label>
-  <button class="btn btn-primary" ng-click='specificPlayer.edit()'> Edit </button>
-  <button class="btn btn-default" ng-click='specificPlayer.cancelEdit()'> Cancel </button>
-  <button class="btn btn-success" ng-click='specificPlayer.save()'> Save </button>
-  <button class="btn btn-danger" ng-click='specificPlayer.delete()'> Delete </button>
+  <div class='edit-buttons'>
+    <button class="btn" ng-click='specificPlayer.edit()'> Edit </button>
+    <button class="btn-default" ng-click='specificPlayer.cancelEdit()'> Cancel </button>
+    <button class="btn-success" ng-click='specificPlayer.save()'> Save </button>
+    <button class="btn-danger" ng-click='specificPlayer.delete()'> Delete </button>
+  </div>
   <br>
   <p ng-show='specificPlayer.success' class='text-success'> {{specificPlayer.success}} </p>
   <p ng-hide='specificPlayer.success' class='text-error'> {{specificPlayer.error}} </p>

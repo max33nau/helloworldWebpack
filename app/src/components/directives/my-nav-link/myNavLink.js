@@ -14,7 +14,6 @@ export default function( ngModule ) {
       },
 			controller: function($scope) {
 				$scope.styles = style;
-				console.log($scope.styles);
 			}
 		};
 	});

@@ -1,5 +1,6 @@
 'use strict';
 import template from './newPlayer.html';
+import style from './newPlayer.scss';
 
 export default function( ngModule ) {
 	ngModule.directive( 'newPlayerForm', function(){
@@ -14,6 +15,7 @@ export default function( ngModule ) {
 			controller: ['$scope', 'PlayerInfo', function($scope,PlayerInfo) {
 		    $scope.error = '';
 		    $scope.success = '';
+				$scope.styles = style;
 		    $scope.playerInfo = {};
 		    $scope.playerInfo.createPlayer = function() {
 					if(Number($scope.playerInfo.yearsInTheLeauge) === 0) {

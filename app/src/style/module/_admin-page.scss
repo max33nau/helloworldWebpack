@@ -1,0 +1,27 @@
+.admin-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.admin-tab {
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-family: $coolFont;
+
+  &:hover {
+    color: darkblue;
+    font-weight: bolder;
+  }
+}
+
+.edit-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  button {
+    padding: 5px;
+    margin: 5px;
+  }
+}

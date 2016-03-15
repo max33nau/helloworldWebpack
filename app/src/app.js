@@ -1,7 +1,6 @@
 'use strict';
 
-/* CSS Styling */
-import './style/main.scss';
+
 
 /* Angular Vendors */
 import angular from 'angular' ;
@@ -22,6 +21,9 @@ import components from './components';
 
 /* config StateProvider */
 import configStateProvider from './stateProvider';
+
+/* SCSS Styling */
+import './style/main';
 
 const app = angular.module('myApp', [
   angularRouter,

@@ -1,13 +1,19 @@
 <div>
-  <form ng-show='showAddPlayerForm'>
-    <h4> {{formHeader}} </h4>
+    <h4 class='center'> {{formHeader}} </h4>
+    <br>
+  <form ng-show='showAddPlayerForm' class={{::styles.newPlayerForm}} >
+
     <new-player-input input-name='Name:' input-type='text' input-model='playerInfo.name'> </new-player-input>
+    <br>
     <new-player-input input-name='Team:' input-type='text' input-model='playerInfo.team'> </new-player-input>
+    <br>
     <new-player-input input-name='Age:' input-type='text' input-model='playerInfo.age'> </new-player-input>
+    <br>
     <new-player-input input-name='Position:' input-type='text' input-model='playerInfo.position'> </new-player-input>
+    <br>
     <new-player-input input-name='Years in the league:' input-type='text' input-model='playerInfo.yearsInTheLeauge'> </new-player-input>
     <br>
-    <button ng-click='playerInfo.createPlayer()' class="btn btn-default">Create Player</button>
+    <button ng-click='playerInfo.createPlayer()' class="center btn-success">Create Player</button>
     <br>
     <p ng-show='error' class='bg-danger result'> {{error}} </p>
     <p ng-show='success' class='bg-success result'> {{success}} </p>
