@@ -1,10 +1,10 @@
-<div class='searchOnePlayer'>
-  <div ng-show='showOne.notFound'>
+<div>
+  <div ng-show='showOne.notFound' class='txt-error-response center'>
     {{showOne.error}}
   </div>
   <div ng-show='showOne.found'>
     <h5 id='playerName'> {{showOne.searchedPlayer.name}} </h5>
-    <ul 'playerList'>
+    <ul class='playerList'>
       <li class='player-list-info'> Age: {{showOne.searchedPlayer.age}} </li>
       <li class='player-list-info'> Team: {{showOne.searchedPlayer.team}} </li>
       <li class='player-list-info'> Position: {{showOne.searchedPlayer.position}} </li>

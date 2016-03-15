@@ -4,3 +4,27 @@
 $mainHeaderFont: 'Bangers', cursive;
 
 $coolFont: 'Indie Flower', cursive;
+
+.cool-font {
+  font-family: $coolFont;
+}
+
+.txt-success-response, .txt-error-response, .txt-normal-response {
+  font-family: $coolFont;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+  color: black;
+  display: inline-block;
+}
+
+
+.txt-success-response {
+  color: green;
+  border-color: green;
+}
+
+.txt-error-response {
+  color: red;
+  border-color: red;
+}
